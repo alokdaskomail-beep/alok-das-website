@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import { BookOpen, CloudCog, Zap, BarChart, Users, Lightbulb, Search, DraftingCompass, Rocket, Handshake } from 'lucide-react';
+// CORRECTED: Replaced 'Handshake' with 'HeartHandshake'
+import { BookOpen, CloudCog, Zap, BarChart, Users, Lightbulb, Search, DraftingCompass, Rocket, HeartHandshake } from 'lucide-react';
 
 // Button component re-definition for self-containment
 function Button({ children }: { children: React.ReactNode }) {
@@ -21,7 +22,8 @@ const processSteps = [
     { icon: <Search className="w-12 h-12 text-primary" />, title: "1. Assessment", description: "Analysis of your current digital capabilities." },
     { icon: <DraftingCompass className="w-12 h-12 text-primary" />, title: "2. Strategy", description: "Customized digital transformation roadmap." },
     { icon: <Rocket className="w-12 h-12 text-primary" />, title: "3. Implementation", description: "Integration of new technologies and processes." },
-    { icon: <Handshake className="w-12 h-12 text-primary" />, title: "4. Support", description: "Ongoing support and training." }
+    // CORRECTED: Using the real icon name here
+    { icon: <HeartHandshake className="w-12 h-12 text-primary" />, title: "4. Support", description: "Ongoing support and training." }
 ];
 
 export default function DigitalTransformationPage() {
