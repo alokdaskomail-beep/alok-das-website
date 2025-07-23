@@ -1,10 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import { Server, Megaphone, Users, Cpu } from 'lucide-react';
+import LeadMagnetForm from '@/components/ui/LeadMagnetForm'; // <-- IMPORT THE NEW COMPONENT
 
 // --- Sub-Components for the Homepage ---
-// To keep things simple, we'll define these smaller components right in the homepage file.
-
 function Button({ children }: { children: React.ReactNode }) {
   const baseClasses = "inline-block px-8 py-3 rounded-md font-bold text-white transition-transform transform hover:scale-105 bg-primary hover:bg-orange-600";
   return <span className={baseClasses}>{children}</span>;
@@ -18,26 +17,6 @@ function ServiceCard({ icon, title, description, href }: { icon: React.ReactNode
       <p className="text-gray-600 flex-grow">{description}</p>
       <Link href={href} className="mt-4 text-primary font-bold hover:underline">Learn More</Link>
     </div>
-  );
-}
-
-function LeadMagnetForm() {
-  'use client';
-  const [email, setEmail] = React.useState('');
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email && email.includes('@')) {
-      alert(`Success! Your guide is being "downloaded" for ${email}.`);
-      setEmail('');
-    } else {
-      alert('Please enter a valid email address.');
-    }
-  };
-  return (
-    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 w-full max-w-lg">
-      <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email" className="flex-grow px-4 py-3 rounded-md border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary" required />
-      <button type="submit" className="px-6 py-3 rounded-md font-bold text-white transition-transform transform hover:scale-105 bg-accent hover:bg-blue-700">Download Now</button>
-    </form>
   );
 }
 
@@ -99,6 +78,7 @@ export default function HomePage() {
         <div className="bg-accent text-white rounded-lg p-12 flex flex-col items-center text-center">
           <h2 className="font-serif text-4xl font-bold">Get Your Free Guide to Digital Success</h2>
           <p className="mt-2 mb-6 max-w-2xl">Download our exclusive guide on the top 5 digital strategies for your business.</p>
+          {/* USE THE NEW COMPONENT HERE */}
           <LeadMagnetForm />
         </div>
       </section>
