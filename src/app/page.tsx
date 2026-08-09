@@ -1,87 +1,532 @@
-import React from 'react';
-import Link from 'next/link';
-import { Server, Megaphone, Users, Cpu } from 'lucide-react';
-import LeadMagnetForm from '@/components/ui/LeadMagnetForm'; // <-- IMPORT THE NEW COMPONENT
+import Image from "next/image";
 
-// --- Sub-Components for the Homepage ---
-function Button({ children }: { children: React.ReactNode }) {
-  const baseClasses = "inline-block px-8 py-3 rounded-md font-bold text-white transition-transform transform hover:scale-105 bg-primary hover:bg-orange-600";
-  return <span className={baseClasses}>{children}</span>;
-}
+const phone = "+9779865711752";
+const email = "alokdaskomail@gmail.com";
+const whatsappText =
+  "Hello Alok, I would like a free 15-minute website opportunity review.\n\nBusiness name:\nWebsite or social page:\nMain goal: More enquiries / Online sales / Better visibility\nBiggest current challenge:";
+const whatsappUrl = `https://wa.me/9779865711752?text=${encodeURIComponent(
+  whatsappText,
+)}`;
 
-function ServiceCard({ icon, title, description, href }: { icon: React.ReactNode, title: string, description: string, href: string }) {
-  return (
-    <div className="bg-white/50 backdrop-blur-sm p-6 rounded-lg shadow-md text-center flex flex-col items-center hover:shadow-xl transition-shadow">
-      <div className="bg-primary text-white rounded-full p-4 mb-4">{icon}</div>
-      <h3 className="font-serif text-xl font-bold mb-2 text-gray-800">{title}</h3>
-      <p className="text-gray-600 flex-grow">{description}</p>
-      <Link href={href} className="mt-4 text-primary font-bold hover:underline">Learn More</Link>
-    </div>
-  );
-}
-
-// --- Data for the Homepage ---
-const services = [
-  { icon: <Server size={32} />, title: "Digital Transformation Consulting", description: "Strategic guidance to integrate digital technology into all areas of your business.", href: "/services/digital-transformation" },
-  { icon: <Megaphone size={32} />, title: "Digital Marketing", description: "Targeted online campaigns to boost your visibility and attract more guests.", href: "/services/digital-marketing" },
-  { icon: <Users size={32} />, title: "Training & Capacity Building", description: "Empowering your team with the digital skills needed to excel in the modern era.", href: "/services/training" },
-  { icon: <Cpu size={32} />, title: "Technology Integration", description: "Seamlessly implement and manage the right tech for your operational needs.", href: "/services/technology-integration" }
+const projects = [
+  {
+    name: "TOTOPASA",
+    url: "https://totopasa.com/",
+    domain: "totopasa.com",
+    type: "E-commerce - Personalised gifting",
+    result:
+      "A clearer shopping journey built around product discovery, customer trust and direct action.",
+    measure: "Product enquiries and completed purchases",
+    color: "coral",
+    featured: true,
+  },
+  {
+    name: "Kathmandu Wedding",
+    url: "https://kathmandu.wedding/",
+    domain: "kathmandu.wedding",
+    type: "Premium service - Destination weddings",
+    result:
+      "Premium positioning and an enquiry journey designed for couples planning from Nepal and abroad.",
+    measure: "Qualified wedding enquiries",
+    color: "rose",
+    featured: true,
+  },
+  {
+    name: "Shangri-La Boutique Hotel",
+    url: "https://shangri-laboutiquehotel.com/",
+    domain: "shangri-laboutiquehotel.com",
+    type: "Hospitality - Direct guest discovery",
+    result:
+      "A boutique hotel presence designed to communicate the stay experience and move guests toward direct contact.",
+    measure: "Direct booking enquiries",
+    color: "green",
+    featured: true,
+  },
+  {
+    name: "Minakshi Traders",
+    url: "https://minakshitraders.com/",
+    domain: "minakshitraders.com",
+    type: "Local services - Commercial SEO",
+    result:
+      "A search-ready service website that helps customers quickly understand, trust and contact the business.",
+    measure: "Calls and service enquiries from search",
+    color: "amber",
+  },
+  {
+    name: "My Travel Makers",
+    url: "https://mytravelmakers.com/",
+    domain: "mytravelmakers.com",
+    type: "Travel - Enquiry journey",
+    result:
+      "A content-rich travel presence connecting destinations and services to practical customer enquiries.",
+    measure: "Trip and itinerary enquiries",
+    color: "green",
+  },
+  {
+    name: "World Merchant Investment",
+    url: "https://wmicapitale.com/",
+    domain: "wmicapitale.com",
+    type: "Investment - Corporate credibility",
+    result:
+      "A structured corporate presence that presents the organisation, its focus and its investment proposition with clarity.",
+    measure: "Qualified investor conversations",
+    color: "amber",
+  },
 ];
 
-const testimonials = [
-  { quote: "Working with Alok was a game-changer. Our online bookings have tripled.", name: "Priya Gurung", title: "Owner, Mountain View Resort", avatar: "https://placehold.co/100x100/E67E22/white?text=PG" },
-  { quote: "The digital marketing strategy developed for us was brilliant.", name: "Ramesh Thapa", title: "Manager, Himalayan Trails Trekking", avatar: "https://placehold.co/100x100/2980B9/white?text=RT" },
-  { quote: "The team training was incredibly valuable. Our staff is now more confident.", name: "Sunita Lama", title: "Director, Annapurna Boutique Hotel", avatar: "https://placehold.co/100x100/F1C40F/white?text=SL" }
+const capabilities = [
+  [
+    "Conversion-focused websites",
+    "Clear positioning, stronger trust and simpler paths from interest to enquiry or purchase.",
+  ],
+  [
+    "Google & Meta advertising",
+    "Campaign structure, targeting and creative direction built around a real business objective.",
+  ],
+  [
+    "SEO & discoverability",
+    "Technical foundations and useful content that help the right customers find your business.",
+  ],
+  [
+    "WhatsApp customer journeys",
+    "Structured conversations that collect useful details and make follow-up easier.",
+  ],
+  [
+    "Tracking & improvement",
+    "Measurement that shows which pages, campaigns and actions are creating opportunities.",
+  ],
 ];
 
+const process = [
+  [
+    "Review",
+    "We identify where attention, trust or conversion is breaking down.",
+  ],
+  [
+    "Prioritise",
+    "You receive a focused recommendation based on impact, effort and budget.",
+  ],
+  [
+    "Build",
+    "I implement the agreed website, campaign, SEO or customer-journey improvements.",
+  ],
+  [
+    "Measure",
+    "We track meaningful actions, learn from the response and improve what works.",
+  ],
+];
 
-// --- The Main Homepage Component ---
+const packages = [
+  {
+    eyebrow: "A focused first step",
+    name: "Launch Page",
+    price: "NPR 35,000",
+    timeline: "Delivered in 5-7 working days",
+    items: [
+      "One conversion-focused landing page",
+      "Mobile-first design",
+      "WhatsApp or enquiry form",
+      "Analytics and basic SEO setup",
+    ],
+  },
+  {
+    eyebrow: "Most popular",
+    name: "Business Website",
+    price: "NPR 75,000",
+    timeline: "Delivered in 10-14 working days",
+    items: [
+      "Up to 6 core pages",
+      "Clear enquiry journey",
+      "Speed, SEO and analytics setup",
+      "Two weeks of post-launch support",
+    ],
+    featured: true,
+  },
+  {
+    eyebrow: "Sell online",
+    name: "E-commerce Website",
+    price: "NPR 150,000",
+    timeline: "Delivered in 3-5 weeks",
+    items: [
+      "Product catalogue and checkout",
+      "Payment and delivery setup",
+      "Conversion tracking",
+      "Store handover and training",
+    ],
+  },
+];
+
+function Arrow() {
+  return <span aria-hidden="true">↗</span>;
+}
+
 export default function HomePage() {
   return (
-    <div className="space-y-24 md:space-y-32 mb-24">
-      {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center text-white text-center">
-        <div className="absolute inset-0 bg-black/50 z-10"></div>
-        <img src="https://placehold.co/1920x1080/333/555?text=Himalayan+Scenery" alt="Himalayas" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="relative z-20 p-4">
-          <h1 className="font-serif text-4xl md:text-7xl font-bold drop-shadow-lg">Digital Transformation for Hospitality</h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto drop-shadow-md">Leveraging technology to enhance guest experiences and drive growth.</p>
-          <div className="mt-8">
-            <Link href="/digital-readiness-assessment"><Button>Start Your Assessment</Button></Link>
+    <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Person",
+                "@id": "https://alokdas.com.np/#alok-das",
+                name: "Alok Das",
+                jobTitle: "Independent Digital Growth Partner",
+                url: "https://alokdas.com.np/",
+                image: "https://alokdas.com.np/images/alok-das.jpg",
+                telephone: phone,
+                email,
+                worksFor: {
+                  "@id": "https://alokdas.com.np/#digital-growth",
+                },
+                knowsAbout: [
+                  "Website conversion",
+                  "Google Ads",
+                  "Meta Ads",
+                  "SEO",
+                  "WhatsApp marketing",
+                  "Analytics",
+                ],
+              },
+              {
+                "@type": "ProfessionalService",
+                "@id": "https://alokdas.com.np/#digital-growth",
+                name: "Alok Das - Digital Growth Partner",
+                url: "https://alokdas.com.np/",
+                description:
+                  "Conversion-focused websites, digital advertising, SEO, WhatsApp customer journeys and performance tracking.",
+                founder: { "@id": "https://alokdas.com.np/#alok-das" },
+                areaServed: "Worldwide",
+                serviceType: [
+                  "Digital growth strategy",
+                  "Website design and development",
+                  "Google Ads",
+                  "Meta Ads",
+                  "SEO",
+                  "Conversion tracking",
+                ],
+              },
+            ],
+          }),
+        }}
+      />
+
+      <header className="site-header">
+        <a className="brand" href="#top" aria-label="Alok Das home">
+          <span className="brand-mark">AD</span>
+          <span>
+            <strong>Alok Das</strong>
+            <small>Independent Digital Growth Partner</small>
+          </span>
+        </a>
+        <nav aria-label="Primary navigation">
+          <a href="#work">Work</a>
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#about">About</a>
+        </nav>
+        <a className="header-cta" href={whatsappUrl}>
+          Discuss your business <Arrow />
+        </a>
+      </header>
+
+      <section className="hero" id="top">
+        <div className="hero-copy">
+          <p className="eyebrow">
+            <span aria-hidden="true" /> Websites for service businesses and
+            growing brands
+          </p>
+          <h1>
+            Turn more visitors into <em>qualified enquiries</em> and customers.
+          </h1>
+          <p className="hero-intro">
+            I build fast, credible websites with a clear path to action-then
+            connect SEO, advertising, WhatsApp and tracking when your business
+            is ready to grow.
+          </p>
+          <div className="hero-actions">
+            <a className="button button-primary" href={whatsappUrl}>
+              Book a free 15-minute review <Arrow />
+            </a>
+            <a className="button button-secondary" href="#packages">
+              View packages & prices
+            </a>
+          </div>
+          <div className="hero-terms" aria-label="Service highlights">
+            <span>From NPR 35,000</span>
+            <span>5-14 day website delivery</span>
+            <span>Fixed scope before work begins</span>
+          </div>
+          <div className="hero-proof">
+            <strong>10</strong>
+            <span>
+              live websites across e-commerce, events, travel, hospitality,
+              services and nonprofit work.
+            </span>
           </div>
         </div>
-      </section>
-      {/* Services Section */}
-      <section className="container mx-auto px-4">
-        <div className="text-center mb-12"><h2 className="font-serif text-4xl font-bold text-gray-800">Our Services</h2></div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service) => <ServiceCard key={service.title} {...service} />)}
-        </div>
-      </section>
-      {/* Testimonials Section */}
-      <section className="bg-white/40 py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12"><h2 className="font-serif text-4xl font-bold text-gray-800">What Our Clients Say</h2></div>
-          <div className="flex overflow-x-auto snap-x snap-mandatory pb-4 gap-8">
-            {testimonials.map((t, i) => (
-              <div key={i} className="snap-center flex-shrink-0 w-10/12 md:w-1/3 bg-white rounded-lg shadow-lg p-8">
-                <img src={t.avatar} alt={t.name} className="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-primary"/>
-                <p className="text-gray-600 italic text-center mb-4">"{t.quote}"</p>
-                <div className="text-center"><p className="font-bold text-gray-800">{t.name}</p><p className="text-sm text-accent">{t.title}</p></div>
-              </div>
+
+        <div className="system-card" aria-label="Connected digital growth system">
+          <div className="system-top">
+            <span>Digital growth system</span>
+            <i>Live</i>
+          </div>
+          <div className="system-score">
+            <span>Business goal</span>
+            <strong>Attention → Action</strong>
+            <small>Build the path. Measure the response. Improve what works.</small>
+          </div>
+          <div className="system-flow">
+            <div>
+              <b>01</b>
+              <span>Get found</span>
+              <small>SEO & ads</small>
+            </div>
+            <i>→</i>
+            <div>
+              <b>02</b>
+              <span>Build trust</span>
+              <small>Website</small>
+            </div>
+            <i>→</i>
+            <div>
+              <b>03</b>
+              <span>Take action</span>
+              <small>WhatsApp & sales</small>
+            </div>
+          </div>
+          <div className="system-tags">
+            {["Google", "Meta", "SEO", "WhatsApp", "Analytics"].map((tag) => (
+              <span key={tag}>{tag}</span>
             ))}
           </div>
         </div>
       </section>
-      {/* Lead Magnet Section */}
-      <section className="container mx-auto px-4">
-        <div className="bg-accent text-white rounded-lg p-12 flex flex-col items-center text-center">
-          <h2 className="font-serif text-4xl font-bold">Get Your Free Guide to Digital Success</h2>
-          <p className="mt-2 mb-6 max-w-2xl">Download our exclusive guide on the top 5 digital strategies for your business.</p>
-          {/* USE THE NEW COMPONENT HERE */}
-          <LeadMagnetForm />
+
+      <section className="signal-strip" aria-label="Core outcomes">
+        <span>Get found by the right people</span>
+        <span>Earn trust faster</span>
+        <span>Make action easier</span>
+        <span>Know what is working</span>
+      </section>
+
+      <section className="section work-section" id="work">
+        <div className="section-heading">
+          <div>
+            <p className="kicker">Selected work</p>
+            <h2>Live businesses. Real digital systems.</h2>
+          </div>
+          <p>
+            Different industries, one consistent job: make the business easier
+            to understand, trust and choose.
+          </p>
+        </div>
+        <div className="project-grid">
+          {projects.map((project, index) => (
+            <a
+              className={`project-card ${project.featured ? "featured" : ""} ${
+                project.color
+              }`}
+              href={project.url}
+              key={project.name}
+              rel="noreferrer"
+              target="_blank"
+            >
+              <div className="project-number">
+                {String(index + 1).padStart(2, "0")}
+              </div>
+              <div className="project-window">
+                <span />
+                <span />
+                <span />
+                <strong>{project.domain}</strong>
+              </div>
+              <p>{project.type}</p>
+              <h3>{project.name}</h3>
+              <div className="project-result">{project.result}</div>
+              <div className="project-measure">
+                <b>Success measure</b>
+                <span>{project.measure}</span>
+              </div>
+              <span className="project-link">Visit live website ↗</span>
+            </a>
+          ))}
+        </div>
+        <div className="additional-work">
+          <p>Additional live work</p>
+          <a href="https://shivashrestha.org.np/" target="_blank" rel="noreferrer">
+            Shiva Shrestha Foundation <Arrow />
+          </a>
+          <a href="https://yatrabeauty.com/" target="_blank" rel="noreferrer">
+            Yatra Beauty <Arrow />
+          </a>
         </div>
       </section>
-    </div>
+
+      <section className="section services-section" id="services">
+        <div className="services-intro">
+          <p className="kicker">How I help</p>
+          <h2>Not isolated digital tasks. One connected path to growth.</h2>
+          <p>
+            A website cannot fix a weak offer. Advertising cannot rescue a
+            confusing customer journey. I look at how the pieces work together,
+            then focus effort where it can make the biggest commercial
+            difference.
+          </p>
+        </div>
+        <div className="capability-list">
+          {capabilities.map(([title, description], index) => (
+            <article key={title}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section process-section" id="process">
+        <div className="section-heading light">
+          <div>
+            <p className="kicker">A practical engagement</p>
+            <h2>Start with the business problem-not a list of deliverables.</h2>
+          </div>
+          <p>
+            Every engagement begins by understanding the customer, the offer and
+            the current path to action.
+          </p>
+        </div>
+        <div className="process-grid">
+          {process.map(([title, description], index) => (
+            <article key={title}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section engagement-section" id="packages">
+        <div className="section-heading">
+          <div>
+            <p className="kicker">Website packages</p>
+            <h2>Clear scope, starting price and delivery date.</h2>
+          </div>
+          <p>
+            Choose a practical starting point. After a short review, you receive
+            a fixed proposal before work begins.
+          </p>
+        </div>
+        <div className="engagement-grid">
+          {packages.map((pkg) => (
+            <article
+              className={pkg.featured ? "engagement-featured" : ""}
+              key={pkg.name}
+            >
+              <p>{pkg.eyebrow}</p>
+              <h3>{pkg.name}</h3>
+              <div className="package-price">
+                <small>Starting at</small>
+                <strong>{pkg.price}</strong>
+                <span>{pkg.timeline}</span>
+              </div>
+              <ul>
+                {pkg.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <a className="package-link" href={whatsappUrl}>
+                Ask about this package <Arrow />
+              </a>
+            </article>
+          ))}
+        </div>
+        <p className="package-note">
+          Need advertising, SEO or ongoing improvement? These are quoted
+          separately after the website and tracking foundations are clear.
+        </p>
+      </section>
+
+      <section className="section about-section" id="about">
+        <div className="about-photo">
+          <Image
+            alt="Alok Das, Independent Digital Growth Partner"
+            fill
+            sizes="(max-width: 800px) 76vw, 34vw"
+            src="/images/alok-das.jpg"
+          />
+          <span className="portrait-ring" aria-hidden="true" />
+          <small>
+            <b>AD</b> Strategy
+            <br />+ execution
+          </small>
+        </div>
+        <div className="about-copy">
+          <p className="kicker">Work directly with me</p>
+          <h2>
+            A hands-on partner for businesses that need progress-not more
+            digital noise.
+          </h2>
+          <p>
+            I&apos;m Alok Das. I work across strategy and implementation,
+            connecting websites, advertising, SEO, WhatsApp and measurement into
+            a clearer commercial system. You speak with the person doing the
+            thinking and the work.
+          </p>
+          <div className="about-facts">
+            <span>Based in Nepal</span>
+            <span>Available for remote work</span>
+            <span>Direct, practical collaboration</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="final-cta">
+        <div>
+          <p className="kicker">A low-risk first step</p>
+          <h2>Get a free 15-minute website opportunity review.</h2>
+          <p>
+            Send your website or social page and your main business goal.
+            I&apos;ll identify the clearest opportunity and tell you which
+            package-if any-fits.
+          </p>
+        </div>
+        <div className="cta-actions">
+          <a className="button button-light" href={whatsappUrl}>
+            Book your free review <Arrow />
+          </a>
+          <a href={`mailto:${email}`}>{email}</a>
+          <a href={`tel:${phone}`}>+977 9865711752</a>
+        </div>
+      </section>
+
+      <footer>
+        <a className="brand" href="#top">
+          <span className="brand-mark">AD</span>
+          <span>
+            <strong>Alok Das</strong>
+            <small>Independent Digital Growth Partner</small>
+          </span>
+        </a>
+        <p>
+          Websites - Google & Meta Ads - SEO - WhatsApp - Tracking
+          <br />
+          <a href="/privacy">Privacy & analytics</a>
+        </p>
+        <span>© 2026 Alok Das</span>
+      </footer>
+
+      <a
+        className="floating-whatsapp"
+        href={whatsappUrl}
+        aria-label="Discuss your business on WhatsApp"
+      >
+        <span>WA</span>
+        <strong>Discuss your business</strong>
+      </a>
+    </main>
   );
 }

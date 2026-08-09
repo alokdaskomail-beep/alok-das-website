@@ -1,0 +1,17 @@
+{
+  "name": "Alok Das — Independent Digital Growth Partner",
+  "short_name": "Alok Das",
+  "description": "Conversion-focused websites, advertising, SEO, WhatsApp customer journeys and performance tracking.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f2e8",
+  "theme_color": "#0b2c20",
+  "icons": [
+    {
+      "src": "/favicon-ad.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

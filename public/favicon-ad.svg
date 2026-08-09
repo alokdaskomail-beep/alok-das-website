@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Alok Das Digital Growth Partner">
+  <rect width="64" height="64" rx="18" fill="#123d2d"/>
+  <rect x="4" y="4" width="56" height="56" rx="15" fill="none" stroke="#e4a72f" stroke-width="3"/>
+  <path d="M16 45 27.2 18h4.1L42 45h-6.3l-2.1-5.8H24.2L22 45h-6Zm10.1-11h5.6l-2.8-8.1-2.8 8.1Z" fill="#f7f2e8"/>
+  <path d="M42.5 18H49c8.5 0 13 5.1 13 13.4C62 39.8 57.5 45 49 45h-6.5V18Zm6 5.3v16.4h1c4.2 0 6.4-2.8 6.4-8.3 0-5.4-2.2-8.1-6.4-8.1h-1Z" fill="#e4a72f" transform="translate(-5)"/>
+</svg>
