@@ -66,15 +66,15 @@ img {
 
 .brand-mark {
   display: grid;
-  width: 42px;
-  height: 42px;
+  width: 46px;
+  height: 46px;
   flex: 0 0 auto;
   place-items: center;
-  border-radius: 50%;
+  border-radius: 13px 13px 13px 3px;
   background: var(--deep);
-  color: #f8efe0;
+  color: #fff;
   font-size: 0.82rem;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 0;
 }
 
@@ -393,6 +393,36 @@ h3 {
   border-right: 1px solid rgba(255, 255, 255, 0.14);
   text-align: center;
   font-weight: 900;
+}
+
+.hotel-specialization {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
+  gap: clamp(28px, 6vw, 76px);
+  align-items: center;
+  background: linear-gradient(135deg, #fffaf1, #e8f1e4);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.hotel-specialization p {
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.hotel-specialization small {
+  display: block;
+  margin-top: 16px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.hotel-specialization-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
 }
 
 .section {
@@ -858,6 +888,148 @@ footer p {
   font-size: 0.9rem;
 }
 
+.hotel-page-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 440px);
+  gap: clamp(30px, 6vw, 80px);
+  align-items: center;
+  padding: clamp(58px, 9vw, 120px) clamp(18px, 6vw, 90px);
+}
+
+.hotel-page-hero h1 {
+  max-width: 980px;
+}
+
+.hotel-page-hero p {
+  max-width: 760px;
+  color: var(--muted);
+  font-size: clamp(1.08rem, 2vw, 1.32rem);
+  line-height: 1.75;
+}
+
+.hotel-audit-card {
+  padding: clamp(24px, 4vw, 34px);
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  background: var(--deep);
+  color: #fff8eb;
+  box-shadow: var(--shadow);
+}
+
+.hotel-audit-card span {
+  color: #f4b49d;
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.hotel-audit-card h2 {
+  margin: 16px 0;
+  font-size: clamp(2rem, 4vw, 3.3rem);
+}
+
+.hotel-audit-card p {
+  color: rgba(255, 248, 235, 0.76);
+  font-size: 1rem;
+}
+
+.missing-bookings,
+.search-questions,
+.hotel-services,
+.faq-section {
+  background: var(--paper-2);
+}
+
+.audit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.audit-grid article,
+.question-grid article,
+.faq-list article {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: #fffaf3;
+  box-shadow: 0 16px 45px rgba(18, 38, 28, 0.06);
+}
+
+.audit-grid span {
+  color: var(--coral);
+  font-weight: 900;
+}
+
+.audit-grid p,
+.question-grid p,
+.faq-list p,
+.experience-section p,
+.pricing-focus p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.question-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.experience-section,
+.pricing-focus {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(300px, 1fr);
+  gap: clamp(30px, 6vw, 76px);
+  align-items: start;
+}
+
+.experience-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.experience-list span {
+  padding: 10px 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.56);
+  color: var(--deep);
+  font-weight: 900;
+}
+
+.price-panel {
+  margin-top: 24px;
+  padding: 26px;
+  border-radius: 22px;
+  background: var(--deep);
+  color: #fff8eb;
+}
+
+.price-panel p,
+.price-panel span {
+  color: rgba(255, 248, 235, 0.74);
+}
+
+.price-panel strong,
+.price-panel span {
+  display: block;
+}
+
+.price-panel strong {
+  margin: 8px 0 10px;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 1;
+}
+
+.faq-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
 .privacy-page {
   min-height: 100vh;
   padding: clamp(24px, 5vw, 70px);
@@ -897,8 +1069,12 @@ footer p {
   }
 
   .hero,
+  .hotel-page-hero,
+  .hotel-specialization,
   .services-section,
   .about-section,
+  .experience-section,
+  .pricing-focus,
   .final-cta {
     grid-template-columns: 1fr;
   }
@@ -913,6 +1089,7 @@ footer p {
   }
 
   .process-grid,
+  .audit-grid,
   .signal-strip {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -942,6 +1119,9 @@ footer p {
   .project-grid,
   .engagement-grid,
   .process-grid,
+  .audit-grid,
+  .question-grid,
+  .faq-list,
   .signal-strip {
     grid-template-columns: 1fr;
   }

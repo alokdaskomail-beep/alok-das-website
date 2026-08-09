@@ -1,23 +1,29 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const phone = "+9779865711752";
 const email = "alokdaskomail@gmail.com";
-const whatsappText =
-  "Hello Alok, I would like a free 15-minute website opportunity review.\n\nBusiness name:\nWebsite or social page:\nMain goal: More enquiries / Online sales / Better visibility\nBiggest current challenge:";
-const whatsappUrl = `https://wa.me/9779865711752?text=${encodeURIComponent(
-  whatsappText,
+const hotelWhatsappText =
+  "Hi Alok, I would like you to check my hotel's online booking presence.\n\nMy property name is:\nCurrent website or booking link:\nMain challenge:";
+const hotelWhatsappUrl = `https://wa.me/9779865711752?text=${encodeURIComponent(
+  hotelWhatsappText,
+)}`;
+const businessWhatsappText =
+  "Hello Alok, I would like to discuss digital growth support for my business.\n\nBusiness name:\nWebsite or social page:\nMain goal:\nBiggest current challenge:";
+const businessWhatsappUrl = `https://wa.me/9779865711752?text=${encodeURIComponent(
+  businessWhatsappText,
 )}`;
 
 const projects = [
   {
-    name: "TOTOPASA",
-    url: "https://totopasa.com/",
-    domain: "totopasa.com",
-    type: "E-commerce - Personalised gifting",
+    name: "Shangri-La Boutique Hotel",
+    url: "https://shangri-laboutiquehotel.com/",
+    domain: "shangri-laboutiquehotel.com",
+    type: "Hospitality - Direct guest discovery",
     result:
-      "A clearer shopping journey built around product discovery, customer trust and direct action.",
-    measure: "Product enquiries and completed purchases",
-    color: "coral",
+      "A boutique hotel presence designed to communicate the stay experience and move guests toward direct contact.",
+    measure: "Direct booking enquiries",
+    color: "green",
     featured: true,
   },
   {
@@ -32,15 +38,25 @@ const projects = [
     featured: true,
   },
   {
-    name: "Shangri-La Boutique Hotel",
-    url: "https://shangri-laboutiquehotel.com/",
-    domain: "shangri-laboutiquehotel.com",
-    type: "Hospitality - Direct guest discovery",
+    name: "My Travel Makers",
+    url: "https://mytravelmakers.com/",
+    domain: "mytravelmakers.com",
+    type: "Travel - Enquiry journey",
     result:
-      "A boutique hotel presence designed to communicate the stay experience and move guests toward direct contact.",
-    measure: "Direct booking enquiries",
-    color: "green",
+      "A content-rich travel presence connecting destinations and services to practical customer enquiries.",
+    measure: "Trip and itinerary enquiries",
+    color: "amber",
     featured: true,
+  },
+  {
+    name: "TOTOPASA",
+    url: "https://totopasa.com/",
+    domain: "totopasa.com",
+    type: "E-commerce - Personalised gifting",
+    result:
+      "A clearer shopping journey built around product discovery, customer trust and direct action.",
+    measure: "Product enquiries and completed purchases",
+    color: "coral",
   },
   {
     name: "Minakshi Traders",
@@ -50,16 +66,6 @@ const projects = [
     result:
       "A search-ready service website that helps customers quickly understand, trust and contact the business.",
     measure: "Calls and service enquiries from search",
-    color: "amber",
-  },
-  {
-    name: "My Travel Makers",
-    url: "https://mytravelmakers.com/",
-    domain: "mytravelmakers.com",
-    type: "Travel - Enquiry journey",
-    result:
-      "A content-rich travel presence connecting destinations and services to practical customer enquiries.",
-    measure: "Trip and itinerary enquiries",
     color: "green",
   },
   {
@@ -77,42 +83,39 @@ const projects = [
 const capabilities = [
   [
     "Conversion-focused websites",
-    "Clear positioning, stronger trust and simpler paths from interest to enquiry or purchase.",
-  ],
-  [
-    "Google & Meta advertising",
-    "Campaign structure, targeting and creative direction built around a real business objective.",
+    "Clear positioning, stronger trust and simpler paths from visitor interest to enquiry, booking or purchase.",
   ],
   [
     "SEO & discoverability",
-    "Technical foundations and useful content that help the right customers find your business.",
+    "Technical foundations, local visibility and useful content that help the right customers find your business.",
+  ],
+  [
+    "Google & Meta advertising",
+    "Campaign structure, targeting, landing pages and conversion tracking built around real business outcomes.",
   ],
   [
     "WhatsApp customer journeys",
-    "Structured conversations that collect useful details and make follow-up easier.",
+    "Structured conversations, enquiry prompts and follow-up workflows that make action easier.",
   ],
   [
-    "Tracking & improvement",
-    "Measurement that shows which pages, campaigns and actions are creating opportunities.",
+    "Automation & operations workflows",
+    "Practical systems for repetitive communication, internal tracking and smoother customer or guest handling.",
   ],
 ];
 
 const process = [
+  ["Review", "Understand the offer, audience, current channels and path from discovery to action."],
   [
-    "Review",
-    "We identify where attention, trust or conversion is breaking down.",
-  ],
-  [
-    "Prioritise",
-    "You receive a focused recommendation based on impact, effort and budget.",
+    "Prioritize",
+    "Identify the website, SEO, advertising, automation or tracking improvements most likely to matter.",
   ],
   [
     "Build",
-    "I implement the agreed website, campaign, SEO or customer-journey improvements.",
+    "Implement the agreed website, campaign, content, automation or operations workflow.",
   ],
   [
     "Measure",
-    "We track meaningful actions, learn from the response and improve what works.",
+    "Track meaningful actions, learn from the response and improve what is working.",
   ],
 ];
 
@@ -120,20 +123,21 @@ const packages = [
   {
     eyebrow: "A focused first step",
     name: "Launch Page",
-    price: "NPR 35,000",
-    timeline: "Delivered in 5-7 working days",
+    price: "From NPR 35,000",
+    timeline: "A focused page for one offer, campaign or service",
     items: [
       "One conversion-focused landing page",
       "Mobile-first design",
-      "WhatsApp or enquiry form",
+      "WhatsApp or enquiry CTA",
       "Analytics and basic SEO setup",
     ],
+    href: businessWhatsappUrl,
   },
   {
-    eyebrow: "Most popular",
+    eyebrow: "Most common",
     name: "Business Website",
-    price: "NPR 75,000",
-    timeline: "Delivered in 10-14 working days",
+    price: "From NPR 75,000",
+    timeline: "Core pages, clear journey and launch support",
     items: [
       "Up to 6 core pages",
       "Clear enquiry journey",
@@ -141,18 +145,20 @@ const packages = [
       "Two weeks of post-launch support",
     ],
     featured: true,
+    href: businessWhatsappUrl,
   },
   {
-    eyebrow: "Sell online",
-    name: "E-commerce Website",
-    price: "NPR 150,000",
-    timeline: "Delivered in 3-5 weeks",
+    eyebrow: "Specialist offer",
+    name: "Hotel Growth",
+    price: "OTA setup from NPR 15,000",
+    timeline: "Distribution, direct booking and operations support",
     items: [
-      "Product catalogue and checkout",
-      "Payment and delivery setup",
-      "Conversion tracking",
-      "Store handover and training",
+      "Major booking-channel setup",
+      "Hotel website and SEO support",
+      "Ads, tracking and performance review",
+      "Guest automation and workflow support",
     ],
+    href: hotelWhatsappUrl,
   },
 ];
 
@@ -186,8 +192,9 @@ export default function HomePage() {
                   "Google Ads",
                   "Meta Ads",
                   "SEO",
-                  "WhatsApp marketing",
-                  "Analytics",
+                  "WhatsApp journeys",
+                  "Automation",
+                  "Hotel distribution",
                 ],
               },
               {
@@ -196,16 +203,17 @@ export default function HomePage() {
                 name: "Alok Das - Digital Growth Partner",
                 url: "https://alokdas.com.np/",
                 description:
-                  "Conversion-focused websites, digital advertising, SEO, WhatsApp customer journeys and performance tracking.",
+                  "Practical websites, SEO, advertising, WhatsApp journeys, automation and tracking for service businesses, with specialist hotel growth support.",
                 founder: { "@id": "https://alokdas.com.np/#alok-das" },
-                areaServed: "Worldwide",
+                areaServed: ["Nepal", "Kathmandu", "Worldwide"],
                 serviceType: [
-                  "Digital growth strategy",
                   "Website design and development",
+                  "SEO",
                   "Google Ads",
                   "Meta Ads",
-                  "SEO",
-                  "Conversion tracking",
+                  "WhatsApp customer journeys",
+                  "Automation",
+                  "Hotel growth systems",
                 ],
               },
             ],
@@ -222,12 +230,12 @@ export default function HomePage() {
           </span>
         </a>
         <nav aria-label="Primary navigation">
-          <a href="#work">Work</a>
           <a href="#services">Services</a>
-          <a href="#process">Process</a>
+          <Link href="/hotel-growth">Hotel Growth</Link>
+          <a href="#work">Work</a>
           <a href="#about">About</a>
         </nav>
-        <a className="header-cta" href={whatsappUrl}>
+        <a className="header-cta" href={businessWhatsappUrl}>
           Discuss your business <Arrow />
         </a>
       </header>
@@ -235,35 +243,34 @@ export default function HomePage() {
       <section className="hero" id="top">
         <div className="hero-copy">
           <p className="eyebrow">
-            <span aria-hidden="true" /> Websites for service businesses and
-            growing brands
+            <span aria-hidden="true" /> Digital systems for service businesses and growing brands
           </p>
           <h1>
-            Turn more visitors into <em>qualified enquiries</em> and customers.
+            Build a clearer digital path from <em>attention</em> to action.
           </h1>
           <p className="hero-intro">
-            I build fast, credible websites with a clear path to action-then
-            connect SEO, advertising, WhatsApp and tracking when your business
-            is ready to grow.
+            I help service businesses and independent properties build practical
+            digital systems: websites, SEO, advertising, WhatsApp journeys,
+            automation, tracking and operations workflows.
           </p>
           <div className="hero-actions">
-            <a className="button button-primary" href={whatsappUrl}>
-              Book a free 15-minute review <Arrow />
+            <a className="button button-primary" href={businessWhatsappUrl}>
+              Discuss Your Business <Arrow />
             </a>
-            <a className="button button-secondary" href="#packages">
-              View packages & prices
-            </a>
+            <Link className="button button-secondary" href="/hotel-growth">
+              Hotel Growth Support
+            </Link>
           </div>
           <div className="hero-terms" aria-label="Service highlights">
-            <span>From NPR 35,000</span>
-            <span>5-14 day website delivery</span>
-            <span>Fixed scope before work begins</span>
+            <span>Websites from NPR 35,000</span>
+            <span>SEO, ads and WhatsApp journeys</span>
+            <span>Specialist hotel growth practice</span>
           </div>
           <div className="hero-proof">
-            <strong>10</strong>
+            <strong>15+</strong>
             <span>
-              live websites across e-commerce, events, travel, hospitality,
-              services and nonprofit work.
+              years around hospitality, technology, marketing and practical
+              digital systems.
             </span>
           </div>
         </div>
@@ -271,34 +278,34 @@ export default function HomePage() {
         <div className="system-card" aria-label="Connected digital growth system">
           <div className="system-top">
             <span>Digital growth system</span>
-            <i>Live</i>
+            <i>Practical</i>
           </div>
           <div className="system-score">
             <span>Business goal</span>
             <strong>Attention → Action</strong>
-            <small>Build the path. Measure the response. Improve what works.</small>
+            <small>Get found. Build trust. Make follow-up easier.</small>
           </div>
           <div className="system-flow">
             <div>
               <b>01</b>
               <span>Get found</span>
-              <small>SEO & ads</small>
+              <small>SEO, ads & channels</small>
             </div>
             <i>→</i>
             <div>
               <b>02</b>
               <span>Build trust</span>
-              <small>Website</small>
+              <small>Website & proof</small>
             </div>
             <i>→</i>
             <div>
               <b>03</b>
               <span>Take action</span>
-              <small>WhatsApp & sales</small>
+              <small>WhatsApp & tracking</small>
             </div>
           </div>
           <div className="system-tags">
-            {["Google", "Meta", "SEO", "WhatsApp", "Analytics"].map((tag) => (
+            {["Website", "SEO", "Ads", "WhatsApp", "Automation"].map((tag) => (
               <span key={tag}>{tag}</span>
             ))}
           </div>
@@ -312,6 +319,37 @@ export default function HomePage() {
         <span>Know what is working</span>
       </section>
 
+      <section className="section hotel-specialization" id="hotel-growth">
+        <div>
+          <p className="kicker">Specialist hospitality practice</p>
+          <h2>
+            Specialized support for hotels, hostels, guesthouses and independent
+            properties.
+          </h2>
+        </div>
+        <div>
+          <p>
+            Your guests do not all search in the same place. I help independent
+            hotels expand and improve their presence across relevant booking
+            channels, strengthen direct bookings, and automate the repetitive
+            work behind the guest journey.
+          </p>
+          <div className="hotel-specialization-actions">
+            <a className="button button-primary" href={hotelWhatsappUrl}>
+              Check My Hotel - Free <Arrow />
+            </a>
+            <Link className="button button-secondary" href="/hotel-growth">
+              View dedicated hotel page
+            </Link>
+          </div>
+          <small>
+            Send me your hotel name. I&apos;ll check where your property
+            currently appears online and identify practical opportunities to
+            improve its booking visibility.
+          </small>
+        </div>
+      </section>
+
       <section className="section work-section" id="work">
         <div className="section-heading">
           <div>
@@ -320,7 +358,7 @@ export default function HomePage() {
           </div>
           <p>
             Different industries, one consistent job: make the business easier
-            to understand, trust and choose.
+            to find, understand, trust and choose.
           </p>
         </div>
         <div className="project-grid">
@@ -412,8 +450,8 @@ export default function HomePage() {
       <section className="section engagement-section" id="packages">
         <div className="section-heading">
           <div>
-            <p className="kicker">Website packages</p>
-            <h2>Clear scope, starting price and delivery date.</h2>
+            <p className="kicker">Engagement options</p>
+            <h2>Clear starting points, then deeper growth support where needed.</h2>
           </div>
           <p>
             Choose a practical starting point. After a short review, you receive
@@ -438,48 +476,50 @@ export default function HomePage() {
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-              <a className="package-link" href={whatsappUrl}>
-                Ask about this package <Arrow />
+              <a className="package-link" href={pkg.href}>
+                Ask about this <Arrow />
               </a>
             </article>
           ))}
         </div>
         <p className="package-note">
-          Need advertising, SEO or ongoing improvement? These are quoted
-          separately after the website and tracking foundations are clear.
+          Hotel distribution setup starts from NPR 15,000 on the dedicated hotel
+          page. Ongoing SEO, ads, automation and growth support are scoped after
+          the business priorities are clear.
         </p>
       </section>
 
       <section className="section about-section" id="about">
         <div className="about-photo">
           <Image
-            alt="Alok Das, Independent Digital Growth Partner"
+            alt="Alok Das, Hotel Growth and Digital Systems"
             fill
             sizes="(max-width: 800px) 76vw, 34vw"
             src="/images/alok-das.jpg"
           />
           <span className="portrait-ring" aria-hidden="true" />
           <small>
-            <b>AD</b> Strategy
-            <br />+ execution
+            <b>AD</b> Hospitality
+            <br />+ technology
           </small>
         </div>
         <div className="about-copy">
           <p className="kicker">Work directly with me</p>
           <h2>
-            A hands-on partner for businesses that need progress-not more
-            digital noise.
+            A hands-on digital growth partner with a strong hospitality
+            background.
           </h2>
           <p>
-            I&apos;m Alok Das. I work across strategy and implementation,
-            connecting websites, advertising, SEO, WhatsApp and measurement into
-            a clearer commercial system. You speak with the person doing the
-            thinking and the work.
+            I&apos;m Alok Das. I have spent more than 15 years working around
+            hospitality, technology, marketing and digital systems. I work
+            across strategy and implementation, connecting websites,
+            advertising, SEO, WhatsApp, automation and measurement into a
+            clearer commercial system.
           </p>
           <div className="about-facts">
             <span>Based in Nepal</span>
             <span>Available for remote work</span>
-            <span>Direct, practical collaboration</span>
+            <span>Hospitality specialization available</span>
           </div>
         </div>
       </section>
@@ -487,19 +527,19 @@ export default function HomePage() {
       <section className="final-cta">
         <div>
           <p className="kicker">A low-risk first step</p>
-          <h2>Get a free 15-minute website opportunity review.</h2>
+          <h2>Let&apos;s find the clearest digital growth opportunity.</h2>
           <p>
-            Send your website or social page and your main business goal.
-            I&apos;ll identify the clearest opportunity and tell you which
-            package-if any-fits.
+            Send your website, social page or business goal. I&apos;ll help
+            identify the clearest opportunity and the right starting point.
           </p>
         </div>
         <div className="cta-actions">
-          <a className="button button-light" href={whatsappUrl}>
-            Book your free review <Arrow />
+          <a className="button button-light" href={businessWhatsappUrl}>
+            Discuss Your Business <Arrow />
           </a>
+          <Link href="/hotel-growth">Hotel owner? Get a free visibility check</Link>
+          <a href={`tel:${phone}`}>Call Alok: +977 9865711752</a>
           <a href={`mailto:${email}`}>{email}</a>
-          <a href={`tel:${phone}`}>+977 9865711752</a>
         </div>
       </section>
 
@@ -512,7 +552,7 @@ export default function HomePage() {
           </span>
         </a>
         <p>
-          Websites - Google & Meta Ads - SEO - WhatsApp - Tracking
+          Websites - SEO - Ads - WhatsApp - Automation - Hotel Growth
           <br />
           <a href="/privacy">Privacy & analytics</a>
         </p>
@@ -521,7 +561,7 @@ export default function HomePage() {
 
       <a
         className="floating-whatsapp"
-        href={whatsappUrl}
+        href={hotelWhatsappUrl}
         aria-label="Discuss your business on WhatsApp"
       >
         <span>WA</span>

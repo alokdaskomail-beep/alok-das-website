@@ -7,14 +7,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Alok Das | Independent Digital Growth Partner",
   description:
-    "Conversion-focused websites for service businesses and growing brands. Clear packages from NPR 35,000, delivered in as little as 5-7 working days.",
+    "Practical websites, SEO, advertising, WhatsApp journeys, automation and tracking for service businesses, with specialist hotel growth support.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Websites that turn visitors into qualified enquiries",
+    title: "Digital systems that help businesses get found, trusted and chosen",
     description:
-      "Clear website packages from NPR 35,000, with defined scope and delivery timelines.",
+      "Websites, SEO, ads, automation and tracking for service businesses, with a dedicated hotel growth practice.",
     url: siteUrl,
     siteName: "Alok Das - Digital Growth Partner",
     images: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Alok Das - Digital Growth Partner",
-    description: "Websites that turn visitors into qualified enquiries.",
+    description: "Websites, SEO, ads, automation and tracking for service businesses.",
     images: ["/og.png"],
   },
   icons: {
