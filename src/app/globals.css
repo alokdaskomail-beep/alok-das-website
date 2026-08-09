@@ -121,13 +121,13 @@ nav a:hover {
   display: grid;
   grid-template-columns: minmax(0, 1.04fr) minmax(320px, 0.74fr);
   gap: clamp(32px, 6vw, 80px);
-  min-height: calc(100vh - 79px);
-  padding: clamp(56px, 8vw, 110px) clamp(18px, 6vw, 90px) 56px;
+  min-height: min(760px, calc(100vh - 79px));
+  padding: clamp(44px, 6vw, 82px) clamp(18px, 6vw, 90px) 48px;
   align-items: center;
 }
 
 .hero-copy {
-  max-width: 840px;
+  max-width: 760px;
 }
 
 .eyebrow,
@@ -168,8 +168,8 @@ h3 {
 h1 {
   max-width: 900px;
   margin-bottom: 24px;
-  font-size: clamp(3.2rem, 8vw, 7.4rem);
-  line-height: 0.92;
+  font-size: clamp(3rem, 6.3vw, 6.2rem);
+  line-height: 0.96;
   font-weight: 900;
 }
 
