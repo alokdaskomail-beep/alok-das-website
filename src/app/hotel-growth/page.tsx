@@ -328,6 +328,8 @@ export default function HotelGrowthPage() {
             {[
               "Shangri-La",
               "Pomelo",
+              "Alchemy Bed and Breakfast",
+              "Hotel Sunflower",
               "Greenland Nagarkot",
               "Sauraha Safari",
               "Silver Home",
