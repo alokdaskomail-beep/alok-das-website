@@ -890,16 +890,16 @@ footer p {
 
 .hotel-page-hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(300px, 440px);
-  gap: clamp(30px, 5vw, 68px);
+  grid-template-columns: minmax(0, 0.95fr) minmax(300px, 390px);
+  gap: clamp(34px, 6vw, 92px);
   align-items: center;
-  padding: clamp(54px, 7vw, 96px) clamp(18px, 6vw, 90px);
+  padding: clamp(48px, 6vw, 82px) clamp(18px, 6vw, 90px);
 }
 
 .hotel-page-hero h1 {
-  max-width: 840px;
-  font-size: clamp(3.4rem, 6.2vw, 6rem);
-  line-height: 0.96;
+  max-width: 780px;
+  font-size: clamp(3.2rem, 5.4vw, 5.3rem);
+  line-height: 0.98;
 }
 
 .hotel-page-hero p {
@@ -910,9 +910,10 @@ footer p {
 }
 
 .hotel-audit-card {
-  padding: clamp(24px, 4vw, 34px);
+  transform: translateY(18px);
+  padding: clamp(22px, 3vw, 30px);
   border: 1px solid var(--line);
-  border-radius: 26px;
+  border-radius: 24px;
   background: var(--deep);
   color: #fff8eb;
   box-shadow: var(--shadow);
@@ -927,7 +928,8 @@ footer p {
 
 .hotel-audit-card h2 {
   margin: 16px 0;
-  font-size: clamp(2rem, 4vw, 3.3rem);
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  line-height: 1.04;
 }
 
 .hotel-audit-card p {
