@@ -11,6 +11,16 @@ export const metadata = {
   title: "Hotel OTA Setup, Marketing & Direct Booking Support in Nepal | Alok Das",
   description:
     "Help for hotels, hostels and guesthouses in Nepal with OTA setup, Booking.com, Agoda, Expedia, Airbnb, Hostelworld, hotel websites, SEO, ads and guest automation.",
+  alternates: {
+    canonical: "/hotel-growth",
+  },
+  openGraph: {
+    title: "Hotel OTA Setup, Marketing & Direct Booking Support in Nepal",
+    description:
+      "OTA setup, direct-booking websites, hotel SEO, ads and guest automation for hotels, hostels and guesthouses in Nepal.",
+    url: "https://alokdas.com.np/hotel-growth",
+    type: "website",
+  },
 };
 
 const auditAreas = [
