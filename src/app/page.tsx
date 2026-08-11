@@ -38,12 +38,12 @@ const projects = [
     featured: true,
   },
   {
-    name: "My Travel Makers",
+    name: "Travel Maker South Asia",
     url: "https://mytravelmakers.com/",
     domain: "mytravelmakers.com",
-    type: "Travel - Enquiry journey",
+    type: "Tourism - Travel website",
     result:
-      "A content-rich travel presence connecting destinations and services to practical customer enquiries.",
+      "A tourism website connecting destinations, travel services and practical customer enquiries.",
     measure: "Trip and itinerary enquiries",
     color: "amber",
     featured: true,
