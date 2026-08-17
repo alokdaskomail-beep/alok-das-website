@@ -121,45 +121,85 @@ const process = [
 
 const packages = [
   {
-    eyebrow: "A focused first step",
+    eyebrow: "Strategy review",
+    name: "Digital Growth Review",
+    price: "From NPR 15,000",
+    timeline:
+      "A focused review of the business offer, website, visibility, customer journey, and priority digital growth opportunities.",
+    items: [],
+    href: businessWhatsappUrl,
+  },
+  {
+    eyebrow: "Focused launch",
     name: "Launch Page",
-    price: "From NPR 35,000",
-    timeline: "A focused page for one offer, campaign or service",
+    price: "From NPR 45,000",
+    timeline:
+      "A focused conversion page for one offer, campaign, service, or booking journey. Includes mobile-first design, WhatsApp/enquiry CTA, analytics, and basic SEO setup.",
     items: [
-      "One conversion-focused landing page",
-      "Mobile-first design",
-      "WhatsApp or enquiry CTA",
-      "Analytics and basic SEO setup",
+      "One conversion-focused page",
+      "Mobile-first design and CTA path",
+      "Analytics and basic SEO foundation",
     ],
     href: businessWhatsappUrl,
   },
   {
     eyebrow: "Most common",
     name: "Business Website",
-    price: "From NPR 75,000",
-    timeline: "Core pages, clear journey and launch support",
+    price: "From NPR 95,000",
+    timeline:
+      "A conversion-focused website with core pages, clear enquiry journey, SEO foundation, analytics, and launch support.",
     items: [
-      "Up to 6 core pages",
+      "Core business pages",
       "Clear enquiry journey",
-      "Speed, SEO and analytics setup",
-      "Two weeks of post-launch support",
+      "SEO, analytics and launch support",
     ],
     featured: true,
     href: businessWhatsappUrl,
   },
   {
-    eyebrow: "Specialist offer",
-    name: "Hotel Growth",
-    price: "OTA setup from NPR 15,000",
-    timeline: "Distribution, direct booking and operations support",
+    eyebrow: "Hotel setup",
+    name: "Hotel OTA Foundation",
+    price: "From NPR 35,000",
+    timeline:
+      "Setup or optimization support across selected major booking channels. Exact scope depends on platform requirements, content readiness, room/rate complexity, and approval status.",
     items: [
-      "Major booking-channel setup",
-      "Hotel website and SEO support",
-      "Ads, tracking and performance review",
-      "Guest automation and workflow support",
+      "Selected major booking channels",
+      "Listing content and structure support",
+      "Platform requirements reviewed before scope",
     ],
     href: hotelWhatsappUrl,
   },
+  {
+    eyebrow: "Hotel launch",
+    name: "Hotel Booking Launch System",
+    price: "From NPR 75,000",
+    timeline:
+      "A practical launch package for hotels, guesthouses, apartments, and independent properties. Includes OTA setup, Airbnb/listing optimization, Google visibility, guest message templates, room/rate structure, and direct inquiry improvements.",
+    items: [
+      "OTA and Airbnb/listing optimization",
+      "Google visibility and direct inquiry path",
+      "Guest templates and room/rate structure",
+    ],
+    href: hotelWhatsappUrl,
+  },
+  {
+    eyebrow: "Ongoing support",
+    name: "Hotel Growth Partnership",
+    price: "From NPR 35,000/month",
+    timeline:
+      "Ongoing support for visibility, OTA updates, pricing/review support, website improvements, reporting, and guest communication workflows.",
+    items: [
+      "Visibility and OTA updates",
+      "Pricing, review and reporting support",
+      "Website and guest workflow improvements",
+    ],
+    href: hotelWhatsappUrl,
+  },
+];
+
+const pricingClarifications = [
+  "Pricing reflects strategic review, setup quality, and hands-on implementation. Platform fees, paid ads, photography, subscriptions, channel manager costs, and third-party charges are not included unless clearly stated in the proposal.",
+  "For small fixes, single-platform support, or advisory-only needs, lighter support may be available after review.",
 ];
 
 function Arrow() {
@@ -262,7 +302,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="hero-terms" aria-label="Service highlights">
-            <span>Websites from NPR 35,000</span>
+            <span>Launch pages from NPR 45,000</span>
             <span>SEO, ads and WhatsApp journeys</span>
             <span>Specialist hotel growth practice</span>
           </div>
@@ -471,22 +511,24 @@ export default function HomePage() {
                 <strong>{pkg.price}</strong>
                 <span>{pkg.timeline}</span>
               </div>
-              <ul>
-                {pkg.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+              {pkg.items.length > 0 ? (
+                <ul>
+                  {pkg.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              ) : null}
               <a className="package-link" href={pkg.href}>
                 Ask about this <Arrow />
               </a>
             </article>
           ))}
         </div>
-        <p className="package-note">
-          Hotel distribution setup starts from NPR 15,000 on the dedicated hotel
-          page. Ongoing SEO, ads, automation and growth support are scoped after
-          the business priorities are clear.
-        </p>
+        {pricingClarifications.map((note) => (
+          <p className="package-note" key={note}>
+            {note}
+          </p>
+        ))}
       </section>
 
       <section className="section about-section" id="about">
