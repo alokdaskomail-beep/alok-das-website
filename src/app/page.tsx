@@ -337,6 +337,22 @@ export default function HomePage() {
         <a className="header-cta" href={businessWhatsappUrl}>
           Discuss your business <Arrow />
         </a>
+        <details className="mobile-menu">
+          <summary aria-label="Open navigation menu">
+            <span />
+            <span />
+            <span />
+          </summary>
+          <div className="mobile-menu-panel">
+            <a href="#services">Services</a>
+            <Link href="/hotel-growth">Hotel Growth</Link>
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a className="mobile-menu-cta" href={businessWhatsappUrl}>
+              Discuss your business <Arrow />
+            </a>
+          </div>
+        </details>
       </header>
 
       <section className="hero" id="top">
