@@ -541,6 +541,39 @@ h3 {
   line-height: 1.65;
 }
 
+.project-proof {
+  margin-top: 18px;
+  padding: 14px 15px;
+  border-left: 3px solid var(--accent-color);
+  border-radius: 0 14px 14px 0;
+  background: rgba(20, 37, 29, 0.045);
+}
+
+.project-proof b,
+.project-proof span,
+.project-proof q {
+  display: block;
+}
+
+.project-proof b {
+  color: var(--ink);
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+.project-proof span {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
+.project-proof q {
+  color: var(--ink);
+  font-weight: 850;
+  line-height: 1.5;
+}
+
 .project-measure {
   margin-top: auto;
   padding-top: 22px;
