@@ -260,6 +260,22 @@ export default function HotelGrowthPage() {
         <a className="header-cta" href={hotelWhatsappUrl}>
           Check My Hotel <Arrow />
         </a>
+        <details className="mobile-menu">
+          <summary aria-label="Open navigation menu">
+            <span />
+            <span />
+            <span />
+          </summary>
+          <div className="mobile-menu-panel">
+            <Link href="/">Home</Link>
+            <a href="#services">Services</a>
+            <a href="#process">Process</a>
+            <a href="#pricing">Pricing</a>
+            <a className="mobile-menu-cta" href={hotelWhatsappUrl}>
+              Check My Hotel <Arrow />
+            </a>
+          </div>
+        </details>
       </header>
 
       <section className="hotel-page-hero">
