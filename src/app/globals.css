@@ -117,6 +117,69 @@ nav a:hover {
   font-weight: 800;
 }
 
+.mobile-menu {
+  display: none;
+  justify-self: end;
+  position: relative;
+}
+
+.mobile-menu summary {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  gap: 4px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.58);
+  color: var(--deep);
+  cursor: pointer;
+  list-style: none;
+}
+
+.mobile-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-menu summary span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.mobile-menu-panel {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  display: grid;
+  min-width: min(78vw, 280px);
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--paper-2);
+  box-shadow: var(--shadow);
+}
+
+.mobile-menu-panel a {
+  padding: 13px 14px;
+  border-radius: 12px;
+  color: var(--deep);
+  font-weight: 900;
+}
+
+.mobile-menu-panel a:hover {
+  background: rgba(20, 37, 29, 0.06);
+}
+
+.mobile-menu-panel .mobile-menu-cta {
+  margin-top: 6px;
+  background: var(--deep);
+  color: #fffaf1;
+}
+
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.04fr) minmax(320px, 0.74fr);
@@ -1103,6 +1166,10 @@ footer p {
 
   nav {
     display: none;
+  }
+
+  .mobile-menu {
+    display: block;
   }
 
   .hero,
