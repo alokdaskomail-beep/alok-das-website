@@ -91,6 +91,83 @@ const process = [
   ],
 ];
 
+const packages = [
+  {
+    eyebrow: "Strategy review",
+    name: "Digital Growth Review",
+    price: "From NPR 15,000",
+    timeline:
+      "A focused review of the business offer, website, visibility, customer journey, and priority digital growth opportunities.",
+    items: [],
+  },
+  {
+    eyebrow: "Focused launch",
+    name: "Launch Page",
+    price: "From NPR 45,000",
+    timeline:
+      "A focused conversion page for one offer, campaign, service, or booking journey. Includes mobile-first design, WhatsApp/enquiry CTA, analytics, and basic SEO setup.",
+    items: [
+      "One conversion-focused page",
+      "Mobile-first design and CTA path",
+      "Analytics and basic SEO foundation",
+    ],
+  },
+  {
+    eyebrow: "Most common",
+    name: "Business Website",
+    price: "From NPR 95,000",
+    timeline:
+      "A conversion-focused website with core pages, clear enquiry journey, SEO foundation, analytics, and launch support.",
+    items: [
+      "Core business pages",
+      "Clear enquiry journey",
+      "SEO, analytics and launch support",
+    ],
+    featured: true,
+  },
+  {
+    eyebrow: "Hotel setup",
+    name: "Hotel OTA Foundation",
+    price: "From NPR 35,000",
+    timeline:
+      "Setup or optimization support across selected major booking channels. Exact scope depends on platform requirements, content readiness, room/rate complexity, and approval status.",
+    items: [
+      "Selected major booking channels",
+      "Listing content and structure support",
+      "Platform requirements reviewed before scope",
+    ],
+  },
+  {
+    eyebrow: "Hotel launch",
+    name: "Hotel Booking Launch System",
+    price: "From NPR 75,000",
+    timeline:
+      "A practical launch package for hotels, guesthouses, apartments, and independent properties. Includes OTA setup, Airbnb/listing optimization, Google visibility, guest message templates, room/rate structure, and direct inquiry improvements.",
+    items: [
+      "OTA and Airbnb/listing optimization",
+      "Google visibility and direct inquiry path",
+      "Guest templates and room/rate structure",
+    ],
+  },
+  {
+    eyebrow: "Ongoing support",
+    name: "Hotel Growth Partnership",
+    price: "From NPR 35,000/month",
+    timeline:
+      "Ongoing support for visibility, OTA updates, pricing/review support, website improvements, reporting, and guest communication workflows.",
+    items: [
+      "Visibility and OTA updates",
+      "Pricing, review and reporting support",
+      "Website and guest workflow improvements",
+    ],
+  },
+];
+
+const pricingClarifications = [
+  "Pricing reflects strategic review, setup quality, and hands-on implementation. Platform fees, paid ads, photography, subscriptions, channel manager costs, and third-party charges are not included unless clearly stated in the proposal.",
+  "For small fixes, single-platform support, or advisory-only needs, lighter support may be available after review.",
+];
+
 const faqs = [
   [
     "Which OTA platforms can you help with?",
@@ -341,32 +418,49 @@ export default function HotelGrowthPage() {
         </div>
       </section>
 
-      <section className="section pricing-focus" id="pricing">
-        <div>
-          <p className="kicker">Pricing starting point</p>
-          <h2>Start With Your Distribution Foundation</h2>
-          <div className="price-panel">
-            <p>Major OTA Setup</p>
-            <strong>From NPR 15,000</strong>
-            <span>
-              Initial setup and optimization across approximately 4-5
-              appropriate major booking platforms.
-            </span>
+      <section className="section engagement-section hotel-pricing" id="pricing">
+        <div className="section-heading">
+          <div>
+            <p className="kicker">Pricing starting points</p>
+            <h2>Choose the level of support your property needs now.</h2>
           </div>
-        </div>
-        <div>
           <p>
-            Exact scope depends on the property&apos;s existing accounts,
-            room/rate complexity, content readiness and platform eligibility.
+            Start with a practical review, focused setup or full launch system.
+            After review, the final proposal reflects your property, channels,
+            content readiness and commercial priorities.
           </p>
-          <p>
-            Monthly distribution, website, SEO, advertising, automation and
-            growth support is available based on the property&apos;s needs.
-          </p>
-          <a className="button button-primary" href={hotelWhatsappUrl}>
-            Ask About My Hotel <Arrow />
-          </a>
         </div>
+        <div className="engagement-grid">
+          {packages.map((pkg) => (
+            <article
+              className={pkg.featured ? "engagement-featured" : ""}
+              key={pkg.name}
+            >
+              <p>{pkg.eyebrow}</p>
+              <h3>{pkg.name}</h3>
+              <div className="package-price">
+                <small>Starting at</small>
+                <strong>{pkg.price}</strong>
+                <span>{pkg.timeline}</span>
+              </div>
+              {pkg.items.length > 0 ? (
+                <ul>
+                  {pkg.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              ) : null}
+              <a className="package-link" href={hotelWhatsappUrl}>
+                Ask about this <Arrow />
+              </a>
+            </article>
+          ))}
+        </div>
+        {pricingClarifications.map((note) => (
+          <p className="package-note" key={note}>
+            {note}
+          </p>
+        ))}
       </section>
 
       <section className="section faq-section">
