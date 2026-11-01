@@ -343,6 +343,7 @@ export default function HomePage() {
                   "Organized guest communication",
                   "Automation",
                   "Hotel growth systems",
+                  "Practical hotel and OTA training",
                 ],
               },
             ],
@@ -361,6 +362,7 @@ export default function HomePage() {
         <nav aria-label="Primary navigation">
           <a href="#services">Services</a>
           <Link href="/hotel-growth">Hotel Growth</Link>
+          <Link href="/hotel-training">Training</Link>
           <a href="#work">Work</a>
           <a href="#about">About</a>
         </nav>
@@ -376,6 +378,7 @@ export default function HomePage() {
           <div className="mobile-menu-panel">
             <a href="#services">Services</a>
             <Link href="/hotel-growth">Hotel Growth</Link>
+            <Link href="/hotel-training">Training</Link>
             <a href="#work">Work</a>
             <a href="#about">About</a>
             <a className="mobile-menu-cta" href={hotelWhatsappUrl}>
@@ -583,6 +586,22 @@ export default function HomePage() {
               <p>{description}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="section hotel-specialization" id="training">
+        <div>
+          <p className="kicker">Practical hotel & OTA training</p>
+          <h2>Help your team manage booking channels and guest communication with confidence.</h2>
+        </div>
+        <div>
+          <p>Training for owners, managers, front-desk and reservation staff, and individual learners. Learn OTA upkeep, rates and availability, website updates, SEO basics, guest communication, message automation and preparing rooms for photography.</p>
+          <p>Taught personally by Alok Das in Nepali and/or English. Choose a focused workshop or several practical sessions, on-site, live online or in a group, with practice on your property’s accounts where access is available and agreed follow-up support.</p>
+          <div className="hotel-specialization-actions">
+            <Link className="button button-primary" href="/hotel-training">Explore the training program <Arrow /></Link>
+            <a className="button button-secondary" href={`https://wa.me/9779865711752?text=${encodeURIComponent("Hello Alok, I would like to enquire about hotel training.\n\nName / property:\nNumber of participants:\nTopics of interest:\nPreferred format:")}`}>Enquire about training <Arrow /></a>
+          </div>
+          <small>Per-person, per-property/team and custom quotations available. Topics, duration and fees are agreed before booking.</small>
         </div>
       </section>
 
