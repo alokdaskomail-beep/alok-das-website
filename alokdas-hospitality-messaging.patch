@@ -1,0 +1,849 @@
+diff --git a/src/app/hotel-growth/page.tsx b/src/app/hotel-growth/page.tsx
+index 01ddc48..28c60cc 100644
+--- a/src/app/hotel-growth/page.tsx
++++ b/src/app/hotel-growth/page.tsx
+@@ -8,16 +8,16 @@ const hotelWhatsappUrl = `https://wa.me/9779865711752?text=${encodeURIComponent(
+ )}`;
+ 
+ export const metadata = {
+-  title: "Hotel OTA Setup, Marketing & Direct Booking Support in Nepal | Alok Das",
++  title: "Hotel Direct Bookings & Guest Communication Systems in Nepal | Alok Das",
+   description:
+-    "Help for hotels, hostels and guesthouses in Nepal with OTA setup, Booking.com, Agoda, Expedia, Airbnb, Hostelworld, hotel websites, SEO, ads and guest automation.",
++    "Help independent hotels, guesthouses, hostels and tourism properties in Nepal reduce OTA dependency, build direct booking paths and organize guest communication. Free visibility and communication check.",
+   alternates: {
+     canonical: "/hotel-growth",
+   },
+   openGraph: {
+-    title: "Hotel OTA Setup, Marketing & Direct Booking Support in Nepal",
++    title: "Hotel Direct Bookings & Guest Communication Systems in Nepal",
+     description:
+-      "OTA setup, direct-booking websites, hotel SEO, ads and guest automation for hotels, hostels and guesthouses in Nepal.",
++      "More direct booking opportunities, less OTA dependency and clearer guest communication for independent hospitality properties in Nepal.",
+     url: "https://alokdas.com.np/hotel-growth",
+     type: "website",
+   },
+@@ -26,7 +26,7 @@ export const metadata = {
+ const auditAreas = [
+   "Booking.com, Agoda, Expedia, Airbnb, Hostelworld and other relevant booking channels",
+   "Website, Google Business Profile, local SEO and direct enquiry path",
+-  "Room information, amenities, photos, policies, promotions and listing consistency",
++  "Guest replies and follow-up across Booking.com, Airbnb, WhatsApp and other channels",
+ ];
+ 
+ const services = [
+@@ -36,7 +36,7 @@ const services = [
+   },
+   {
+     title: "Turn Your Website Into a Booking Channel",
+-    text: "OTAs are important, but your property should also own a channel where guests can discover you, trust you and contact or book with you directly.",
++    text: "Give guests a trusted place to view rooms and enquire or book directly. Growing this channel can reduce OTA dependency and commission costs over time.",
+   },
+   {
+     title: "SEO & Google Visibility",
+@@ -51,15 +51,15 @@ const services = [
+     text: "Plan practical workflows for internal reservations, check-in and check-out, consumed guest services, housekeeping tasks, review reminders and repeated messages.",
+   },
+   {
+-    title: "Automate Repetitive Guest Communication",
+-    text: "Create practical workflows for pre-arrival information, check-in instructions, service reminders, check-out messages, thank-you notes and review reminders.",
++    title: "Organize Guest Messages & Follow-up",
++    text: "Create reply templates and follow-up routines for Booking.com, Airbnb, WhatsApp and other channels. Make pre-arrival details, check-in instructions and review reminders easier to manage.",
+   },
+ ];
+ 
+ const searchQuestions = [
+   [
+-    "How can I list my hotel on more OTAs?",
+-    "Start by checking where your property is already visible, where it is missing, and whether your photos, room details, policies, prices and promotions are consistent across major channels.",
++    "How can I reduce OTA dependency and commissions?",
++    "Keep relevant OTA listings working while building your own booking paths through your website, Google visibility and guest follow-up. As more guests book directly, fewer stays need to come through commission-based channels.",
+   ],
+   [
+     "Why is my hotel not getting enough online bookings?",
+@@ -70,8 +70,8 @@ const searchQuestions = [
+     "OTAs help you reach travelers, but a hotel website gives your property its own trusted channel for Google searches, direct enquiries, WhatsApp conversations and long-term SEO value.",
+   ],
+   [
+-    "Can hotel marketing connect with daily operations?",
+-    "Yes. Booking visibility works better when guest communication, housekeeping reminders, service records, review requests and internal booking workflows are also organized.",
++    "How can I keep up with guest messages across channels?",
++    "Start with clear responsibility for each channel, reusable replies and a routine for following up open enquiries. Practical workflows across Booking.com, Airbnb and WhatsApp help the team manage communication alongside daily operations.",
+   ],
+ ];
+ 
+@@ -93,72 +93,72 @@ const process = [
+ 
+ const packages = [
+   {
+-    eyebrow: "Strategy review",
+-    name: "Digital Growth Review",
+-    price: "From NPR 15,000",
++    eyebrow: "Core hotel offer - get found",
++    name: "Hotel OTA Foundation",
++    price: "From NPR 35,000",
+     timeline:
+-      "A focused review of the business offer, website, visibility, customer journey, and priority digital growth opportunities.",
+-    items: [],
++      "Help the right guests find and trust your property on selected OTAs. Improve listing clarity and room information, with scope agreed around your channels, content, rate complexity and platform approvals.",
++    items: [
++      "Stronger presence on relevant booking channels",
++      "Clear room details that support guest decisions",
++      "Agreed scope based on platform requirements",
++    ],
+   },
+   {
+-    eyebrow: "Focused launch",
+-    name: "Launch Page",
+-    price: "From NPR 45,000",
++    eyebrow: "Core hotel offer - build direct bookings",
++    name: "Hotel Booking Launch System",
++    price: "From NPR 75,000",
+     timeline:
+-      "A focused conversion page for one offer, campaign, service, or booking journey. Includes mobile-first design, WhatsApp/enquiry CTA, analytics, and basic SEO setup.",
++      "Give guests a clearer path to book directly while strengthening your OTA presence. Connect listing improvements, Google visibility, room and rate clarity, and guest reply templates for independent properties in Nepal.",
++    featured: true,
+     items: [
+-      "One conversion-focused page",
+-      "Mobile-first design and CTA path",
+-      "Analytics and basic SEO foundation",
++      "Clearer OTA and Airbnb listings",
++      "Google visibility and a direct booking path",
++      "Guest reply templates and room/rate clarity",
+     ],
+   },
+   {
+-    eyebrow: "Most common",
+-    name: "Business Website",
+-    price: "From NPR 95,000",
++    eyebrow: "Core hotel offer - ongoing growth",
++    name: "Hotel Growth Partnership",
++    price: "From NPR 35,000/month",
+     timeline:
+-      "A conversion-focused website with core pages, clear enquiry journey, SEO foundation, analytics, and launch support.",
++      "Build a stronger direct booking channel over time and reduce reliance on commission-based bookings. Ongoing support keeps visibility, OTA information, guest follow-up and booking enquiry reporting working together.",
+     items: [
+-      "Core business pages",
+-      "Clear enquiry journey",
+-      "SEO, analytics and launch support",
++      "Consistent visibility and OTA information",
++      "Pricing, reviews and enquiry reporting",
++      "Direct booking and guest follow-up improvements",
+     ],
+-    featured: true,
+   },
+   {
+-    eyebrow: "Hotel setup",
+-    name: "Hotel OTA Foundation",
+-    price: "From NPR 35,000",
++    eyebrow: "Additional option - focused review",
++    name: "Digital Growth Review",
++    price: "From NPR 15,000",
+     timeline:
+-      "Setup or optimization support across selected major booking channels. Exact scope depends on platform requirements, content readiness, room/rate complexity, and approval status.",
+-    items: [
+-      "Selected major booking channels",
+-      "Listing content and structure support",
+-      "Platform requirements reviewed before scope",
+-    ],
++      "Find the gaps between being discovered and receiving an enquiry. A focused paid review for properties or selected service businesses that need a deeper plan after the free check.",
++    items: [],
+   },
+   {
+-    eyebrow: "Hotel launch",
+-    name: "Hotel Booking Launch System",
+-    price: "From NPR 75,000",
++    eyebrow: "Additional option - one offer",
++    name: "Launch Page",
++    price: "From NPR 45,000",
+     timeline:
+-      "A practical launch package for hotels, guesthouses, apartments, and independent properties. Includes OTA setup, Airbnb/listing optimization, Google visibility, guest message templates, room/rate structure, and direct inquiry improvements.",
++      "Give one stay offer, campaign or service a clear path to enquiry. A focused page helps visitors understand the offer and contact you through WhatsApp or an enquiry form.",
+     items: [
+-      "OTA and Airbnb/listing optimization",
+-      "Google visibility and direct inquiry path",
+-      "Guest templates and room/rate structure",
++      "One conversion-focused page",
++      "Mobile-first design and CTA path",
++      "Analytics and basic SEO foundation",
+     ],
+   },
+   {
+-    eyebrow: "Ongoing support",
+-    name: "Hotel Growth Partnership",
+-    price: "From NPR 35,000/month",
++    eyebrow: "Additional option - service businesses",
++    name: "Business Website",
++    price: "From NPR 95,000",
+     timeline:
+-      "Ongoing support for visibility, OTA updates, pricing/review support, website improvements, reporting, and guest communication workflows.",
++      "Help prospective customers understand your services, trust your business and enquire. A website option for selected service businesses, with search foundations and launch support.",
+     items: [
+-      "Visibility and OTA updates",
+-      "Pricing, review and reporting support",
+-      "Website and guest workflow improvements",
++      "Core business pages",
++      "Clear enquiry journey",
++      "SEO, analytics and launch support",
+     ],
+   },
+ ];
+@@ -187,7 +187,7 @@ const faqs = [
+   ],
+   [
+     "What do you need for the free check?",
+-    "Send your hotel name and any current website or booking link. The first check is designed to identify practical gaps and priority opportunities.",
++    "Send your property name, a website or booking link, and the channels where guest messages arrive. The free check looks at visibility, direct booking paths and communication gaps.",
+   ],
+ ];
+ 
+@@ -281,17 +281,18 @@ export default function HotelGrowthPage() {
+       <section className="hotel-page-hero">
+         <div>
+           <p className="eyebrow">
+-            <span aria-hidden="true" /> Hotel marketing, OTA setup and direct bookings
++            <span aria-hidden="true" /> Practical systems for independent hospitality in Nepal
+           </p>
+-          <h1>Hotel Distribution, Direct Booking & Growth Systems</h1>
++          <h1>More direct bookings. Less OTA dependency. Clearer guest communication.</h1>
+           <p>
+-            For independent hotels, hostels, guesthouses and resorts that want
+-            to reach more travelers, reduce repetitive work and build stronger
+-            direct channels.
++            Help your independent hotel, guesthouse, hostel or tourism property
++            in Nepal build direct booking paths and reduce OTA commissions.
++            Organize guest communication across Booking.com, Airbnb, WhatsApp
++            and other channels so fewer enquiries are missed.
+           </p>
+           <div className="hero-actions">
+             <a className="button button-primary" href={hotelWhatsappUrl}>
+-              Check My Hotel - Free <Arrow />
++              Free visibility & communication check <Arrow />
+             </a>
+             <a className="button button-secondary" href={`tel:${phone}`}>
+               Call Alok
+@@ -299,12 +300,12 @@ export default function HotelGrowthPage() {
+           </div>
+         </div>
+         <aside className="hotel-audit-card">
+-          <span>Free intro check</span>
+-          <h2>Where is your property visible today?</h2>
++          <span>Free visibility & communication check</span>
++          <h2>Where are guests finding you—and getting stuck?</h2>
+           <p>
+-            Send your hotel name. I&apos;ll check where your property currently
+-            appears online and identify practical opportunities to improve its
+-            booking visibility.
++            Send your property name and website or booking link. I&apos;ll review
++            how guests find you, how they can book directly and where guest
++            replies or follow-ups may need attention.
+           </p>
+         </aside>
+       </section>
+@@ -313,13 +314,13 @@ export default function HotelGrowthPage() {
+         <div className="section-heading">
+           <div>
+             <p className="kicker">Are you missing bookings?</p>
+-            <h2>Your next guest may be searching somewhere your hotel is not visible.</h2>
++            <h2>Missed enquiries and OTA commissions both cost your property.</h2>
+           </div>
+           <p>
+-            Travelers compare properties across Booking.com, Agoda, Expedia,
+-            Airbnb, Hostelworld, Trip.com, Google, Maps, social media and hotel
+-            websites. Being listed somewhere is not the same as being well
+-            distributed.
++            Travellers find you on Booking.com, Airbnb, Google and other channels,
++            then ask questions through different inboxes. Slow replies can lose
++            the enquiry. A clear direct booking path and practical follow-up
++            routines help you rely less on commission-based bookings over time.
+           </p>
+         </div>
+         <div className="audit-grid">
+@@ -357,11 +358,11 @@ export default function HotelGrowthPage() {
+       <section className="section services-section hotel-services" id="services">
+         <div className="services-intro">
+           <p className="kicker">Connected services</p>
+-          <h2>Distribution, direct acquisition and operations should work together.</h2>
++          <h2>Make it easier for guests to find you, get a reply and book directly.</h2>
+           <p>
+-            The work can start with a focused OTA foundation, then expand into
+-            website, SEO, advertising, guest communication and operations
+-            workflows as the property needs it.
++            Start with the gaps that affect bookings today. Connect clearer
++            listings, direct booking paths and guest reply routines in a
++            practical system your property can use every day.
+           </p>
+         </div>
+         <div className="capability-list">
+@@ -438,12 +439,13 @@ export default function HotelGrowthPage() {
+         <div className="section-heading">
+           <div>
+             <p className="kicker">Pricing starting points</p>
+-            <h2>Choose the level of support your property needs now.</h2>
++            <h2>Three core hotel offers, matched to your next booking priority.</h2>
+           </div>
+           <p>
+-            Start with a practical review, focused setup or full launch system.
+-            After review, the final proposal reflects your property, channels,
+-            content readiness and commercial priorities.
++            Start with Hotel OTA Foundation, Hotel Booking Launch System or
++            Hotel Growth Partnership. The free check helps identify the right
++            starting point. Focused review and website options remain available
++            for smaller needs and selected service businesses.
+           </p>
+         </div>
+         <div className="engagement-grid">
+@@ -455,7 +457,7 @@ export default function HotelGrowthPage() {
+               <p>{pkg.eyebrow}</p>
+               <h3>{pkg.name}</h3>
+               <div className="package-price">
+-                <small>Starting at</small>
++                <small>Investment</small>
+                 <strong>{pkg.price}</strong>
+                 <span>{pkg.timeline}</span>
+               </div>
+@@ -499,15 +501,16 @@ export default function HotelGrowthPage() {
+       <section className="final-cta">
+         <div>
+           <p className="kicker">Free first step</p>
+-          <h2>Check where your hotel is missing online.</h2>
++          <h2>Get a free visibility & communication check.</h2>
+           <p>
+-            Send your property name and current booking link. I&apos;ll identify
+-            practical visibility, presentation and direct-booking opportunities.
++            Send your property name and a current website or booking link.
++            I&apos;ll identify practical ways to improve visibility, organize
++            guest follow-up and strengthen your direct booking path.
+           </p>
+         </div>
+         <div className="cta-actions">
+           <a className="button button-light" href={hotelWhatsappUrl}>
+-            Check My Hotel - Free <Arrow />
++            Free visibility & communication check <Arrow />
+           </a>
+           <a href={`tel:${phone}`}>Call Alok: +977 9865711752</a>
+         </div>
+diff --git a/src/app/layout.tsx b/src/app/layout.tsx
+index a2cb5a5..3443927 100644
+--- a/src/app/layout.tsx
++++ b/src/app/layout.tsx
+@@ -5,16 +5,16 @@ const siteUrl = "https://alokdas.com.np";
+ 
+ export const metadata: Metadata = {
+   metadataBase: new URL(siteUrl),
+-  title: "Alok Das | Independent Digital Growth Partner",
++  title: "Alok Das | Hotel Booking & Guest Communication Systems in Nepal",
+   description:
+-    "Practical websites, SEO, advertising, WhatsApp journeys, automation and tracking for service businesses, with specialist hotel growth support.",
++    "Practical systems for independent hotels, guesthouses and tourism properties in Nepal to get more direct guests, reduce OTA dependency and organize guest communication.",
+   alternates: {
+     canonical: "/",
+   },
+   openGraph: {
+-    title: "Digital systems that help businesses get found, trusted and chosen",
++    title: "More direct guests for independent hotels in Nepal",
+     description:
+-      "Websites, SEO, ads, automation and tracking for service businesses, with a dedicated hotel growth practice.",
++      "Direct booking paths, clearer guest communication and less OTA dependency. Get a free visibility and communication check.",
+     url: siteUrl,
+     siteName: "Alok Das - Digital Growth Partner",
+     images: [
+@@ -31,7 +31,7 @@ export const metadata: Metadata = {
+   twitter: {
+     card: "summary_large_image",
+     title: "Alok Das - Digital Growth Partner",
+-    description: "Websites, SEO, ads, automation and tracking for service businesses.",
++    description: "Direct booking paths and guest communication systems for independent hospitality properties in Nepal.",
+     images: ["/og.png"],
+   },
+   icons: {
+diff --git a/src/app/page.tsx b/src/app/page.tsx
+index 66cf4b2..610bd3d 100644
+--- a/src/app/page.tsx
++++ b/src/app/page.tsx
+@@ -109,24 +109,24 @@ const projects: Project[] = [
+ 
+ const capabilities = [
+   [
+-    "Conversion-focused websites",
+-    "Clear positioning, stronger trust and simpler paths from visitor interest to enquiry, booking or purchase.",
++    "Direct booking websites",
++    "Help guests compare your rooms, trust your property and enquire directly without returning to an OTA.",
+   ],
+   [
+     "SEO & discoverability",
+-    "Technical foundations, local visibility and useful content that help the right customers find your business.",
++    "Help travellers find your property through Google, local search and useful room and destination content.",
+   ],
+   [
+     "Google & Meta advertising",
+-    "Campaign structure, targeting, landing pages and conversion tracking built around real business outcomes.",
++    "Reach travellers with clear stay offers and measure the direct enquiries your campaigns generate.",
+   ],
+   [
+-    "WhatsApp customer journeys",
+-    "Structured conversations, enquiry prompts and follow-up workflows that make action easier.",
++    "Organized guest communication",
++    "Reply templates and follow-up routines across Booking.com, Airbnb and WhatsApp help reduce missed guest enquiries.",
+   ],
+   [
+-    "Automation & operations workflows",
+-    "Practical systems for repetitive communication, internal tracking and smoother customer or guest handling.",
++    "Guest follow-up & daily routines",
++    "Make pre-arrival information, guest requests and review follow-up easier to manage alongside daily property operations.",
+   ],
+ ];
+ 
+@@ -148,20 +148,60 @@ const process = [
+ 
+ const packages = [
+   {
+-    eyebrow: "Strategy review",
++    eyebrow: "Core hotel offer - get found",
++    name: "Hotel OTA Foundation",
++    price: "From NPR 35,000",
++    timeline:
++      "Help the right guests find and trust your property on selected OTAs. Improve listing clarity and room information, with scope agreed around your channels, content, rate complexity and platform approvals.",
++    items: [
++      "Stronger presence on relevant booking channels",
++      "Clear room details that support guest decisions",
++      "Agreed scope based on platform requirements",
++    ],
++    href: hotelWhatsappUrl,
++  },
++  {
++    eyebrow: "Core hotel offer - build direct bookings",
++    name: "Hotel Booking Launch System",
++    price: "From NPR 75,000",
++    timeline:
++      "Give guests a clearer path to book directly while strengthening your OTA presence. Connect listing improvements, Google visibility, room and rate clarity, and guest reply templates for independent properties in Nepal.",
++    featured: true,
++    items: [
++      "Clearer OTA and Airbnb listings",
++      "Google visibility and a direct booking path",
++      "Guest reply templates and room/rate clarity",
++    ],
++    href: hotelWhatsappUrl,
++  },
++  {
++    eyebrow: "Core hotel offer - ongoing growth",
++    name: "Hotel Growth Partnership",
++    price: "From NPR 35,000/month",
++    timeline:
++      "Build a stronger direct booking channel over time and reduce reliance on commission-based bookings. Ongoing support keeps visibility, OTA information, guest follow-up and booking enquiry reporting working together.",
++    items: [
++      "Consistent visibility and OTA information",
++      "Pricing, reviews and enquiry reporting",
++      "Direct booking and guest follow-up improvements",
++    ],
++    href: hotelWhatsappUrl,
++  },
++  {
++    eyebrow: "Additional option - focused review",
+     name: "Digital Growth Review",
+     price: "From NPR 15,000",
+     timeline:
+-      "A focused review of the business offer, website, visibility, customer journey, and priority digital growth opportunities.",
++      "Find the gaps between being discovered and receiving an enquiry. A focused paid review for properties or selected service businesses that need a deeper plan after the free check.",
+     items: [],
+     href: businessWhatsappUrl,
+   },
+   {
+-    eyebrow: "Focused launch",
++    eyebrow: "Additional option - one offer",
+     name: "Launch Page",
+     price: "From NPR 45,000",
+     timeline:
+-      "A focused conversion page for one offer, campaign, service, or booking journey. Includes mobile-first design, WhatsApp/enquiry CTA, analytics, and basic SEO setup.",
++      "Give one stay offer, campaign or service a clear path to enquiry. A focused page helps visitors understand the offer and contact you through WhatsApp or an enquiry form.",
+     items: [
+       "One conversion-focused page",
+       "Mobile-first design and CTA path",
+@@ -170,58 +210,18 @@ const packages = [
+     href: businessWhatsappUrl,
+   },
+   {
+-    eyebrow: "Most common",
++    eyebrow: "Additional option - service businesses",
+     name: "Business Website",
+     price: "From NPR 95,000",
+     timeline:
+-      "A conversion-focused website with core pages, clear enquiry journey, SEO foundation, analytics, and launch support.",
++      "Help prospective customers understand your services, trust your business and enquire. A website option for selected service businesses, with search foundations and launch support.",
+     items: [
+       "Core business pages",
+       "Clear enquiry journey",
+       "SEO, analytics and launch support",
+     ],
+-    featured: true,
+     href: businessWhatsappUrl,
+   },
+-  {
+-    eyebrow: "Hotel setup",
+-    name: "Hotel OTA Foundation",
+-    price: "From NPR 35,000",
+-    timeline:
+-      "Setup or optimization support across selected major booking channels. Exact scope depends on platform requirements, content readiness, room/rate complexity, and approval status.",
+-    items: [
+-      "Selected major booking channels",
+-      "Listing content and structure support",
+-      "Platform requirements reviewed before scope",
+-    ],
+-    href: hotelWhatsappUrl,
+-  },
+-  {
+-    eyebrow: "Hotel launch",
+-    name: "Hotel Booking Launch System",
+-    price: "From NPR 75,000",
+-    timeline:
+-      "A practical launch package for hotels, guesthouses, apartments, and independent properties. Includes OTA setup, Airbnb/listing optimization, Google visibility, guest message templates, room/rate structure, and direct inquiry improvements.",
+-    items: [
+-      "OTA and Airbnb/listing optimization",
+-      "Google visibility and direct inquiry path",
+-      "Guest templates and room/rate structure",
+-    ],
+-    href: hotelWhatsappUrl,
+-  },
+-  {
+-    eyebrow: "Ongoing support",
+-    name: "Hotel Growth Partnership",
+-    price: "From NPR 35,000/month",
+-    timeline:
+-      "Ongoing support for visibility, OTA updates, pricing/review support, website improvements, reporting, and guest communication workflows.",
+-    items: [
+-      "Visibility and OTA updates",
+-      "Pricing, review and reporting support",
+-      "Website and guest workflow improvements",
+-    ],
+-    href: hotelWhatsappUrl,
+-  },
+ ];
+ 
+ const pricingClarifications = [
+@@ -302,15 +302,15 @@ export default function HomePage() {
+                 name: "Alok Das - Digital Growth Partner",
+                 url: "https://alokdas.com.np/",
+                 description:
+-                  "Practical websites, SEO, advertising, WhatsApp journeys, automation and tracking for service businesses, with specialist hotel growth support.",
++                  "Practical visibility, direct booking paths and guest communication systems for independent hotels, guesthouses, hostels and tourism properties in Nepal. Selected service business projects also available.",
+                 founder: { "@id": "https://alokdas.com.np/#alok-das" },
+-                areaServed: ["Nepal", "Kathmandu", "Worldwide"],
++                areaServed: ["Nepal", "Kathmandu"],
+                 serviceType: [
+                   "Website design and development",
+                   "SEO",
+                   "Google Ads",
+                   "Meta Ads",
+-                  "WhatsApp customer journeys",
++                  "Organized guest communication",
+                   "Automation",
+                   "Hotel growth systems",
+                 ],
+@@ -334,8 +334,8 @@ export default function HomePage() {
+           <a href="#work">Work</a>
+           <a href="#about">About</a>
+         </nav>
+-        <a className="header-cta" href={businessWhatsappUrl}>
+-          Discuss your business <Arrow />
++        <a className="header-cta" href={hotelWhatsappUrl}>
++          Free hotel check <Arrow />
+         </a>
+         <details className="mobile-menu">
+           <summary aria-label="Open navigation menu">
+@@ -348,8 +348,8 @@ export default function HomePage() {
+             <Link href="/hotel-growth">Hotel Growth</Link>
+             <a href="#work">Work</a>
+             <a href="#about">About</a>
+-            <a className="mobile-menu-cta" href={businessWhatsappUrl}>
+-              Discuss your business <Arrow />
++            <a className="mobile-menu-cta" href={hotelWhatsappUrl}>
++              Free hotel check <Arrow />
+             </a>
+           </div>
+         </details>
+@@ -358,28 +358,28 @@ export default function HomePage() {
+       <section className="hero" id="top">
+         <div className="hero-copy">
+           <p className="eyebrow">
+-            <span aria-hidden="true" /> Digital systems for service businesses and growing brands
++            <span aria-hidden="true" /> For independent hotels & guesthouses in Nepal
+           </p>
+           <h1>
+-            Build a clearer digital path from <em>attention</em> to action.
++            Digital systems that help independent hotels get <em>more direct guests</em> and reduce OTA commissions.
+           </h1>
+           <p className="hero-intro">
+-            I help service businesses and independent properties build practical
+-            digital systems: websites, SEO, advertising, WhatsApp journeys,
+-            automation, tracking and operations workflows.
++            Practical guest communication, visibility and booking systems so hotel
++            owners spend less time chasing messages and more time running
++            their property.
+           </p>
+           <div className="hero-actions">
+-            <a className="button button-primary" href={businessWhatsappUrl}>
+-              Discuss Your Business <Arrow />
++            <a className="button button-primary" href={hotelWhatsappUrl}>
++              Free visibility & communication check <Arrow />
+             </a>
+             <Link className="button button-secondary" href="/hotel-growth">
+-              Hotel Growth Support
++              Explore hotel growth support
+             </Link>
+           </div>
+           <div className="hero-terms" aria-label="Service highlights">
+-            <span>Launch pages from NPR 45,000</span>
+-            <span>SEO, ads and WhatsApp journeys</span>
+-            <span>Specialist hotel growth practice</span>
++            <span>Hotel OTA setup from NPR 35,000</span>
++            <span>Direct booking paths & guest follow-up</span>
++            <span>Independent hospitality in Nepal</span>
+           </div>
+           <div className="hero-proof">
+             <strong>15+</strong>
+@@ -390,37 +390,37 @@ export default function HomePage() {
+           </div>
+         </div>
+ 
+-        <div className="system-card" aria-label="Connected digital growth system">
++        <div className="system-card" aria-label="Connected hotel booking and guest communication system">
+           <div className="system-top">
+-            <span>Digital growth system</span>
++            <span>Hotel growth system</span>
+             <i>Practical</i>
+           </div>
+           <div className="system-score">
+-            <span>Business goal</span>
+-            <strong>Attention → Action</strong>
+-            <small>Get found. Build trust. Make follow-up easier.</small>
++            <span>Property goal</span>
++            <strong>Discovery → Direct guests</strong>
++            <small>Less OTA dependency. Clearer replies. More direct enquiries.</small>
+           </div>
+           <div className="system-flow">
+             <div>
+               <b>01</b>
+               <span>Get found</span>
+-              <small>SEO, ads & channels</small>
++              <small>Google & booking channels</small>
+             </div>
+             <i>→</i>
+             <div>
+               <b>02</b>
+               <span>Build trust</span>
+-              <small>Website & proof</small>
++              <small>Property website & reviews</small>
+             </div>
+             <i>→</i>
+             <div>
+               <b>03</b>
+-              <span>Take action</span>
+-              <small>WhatsApp & tracking</small>
++              <span>Book direct</span>
++              <small>WhatsApp & follow-up</small>
+             </div>
+           </div>
+           <div className="system-tags">
+-            {["Website", "SEO", "Ads", "WhatsApp", "Automation"].map((tag) => (
++            {["Booking.com", "Airbnb", "Google", "WhatsApp", "Direct bookings"].map((tag) => (
+               <span key={tag}>{tag}</span>
+             ))}
+           </div>
+@@ -428,39 +428,39 @@ export default function HomePage() {
+       </section>
+ 
+       <section className="signal-strip" aria-label="Core outcomes">
+-        <span>Get found by the right people</span>
+-        <span>Earn trust faster</span>
+-        <span>Make action easier</span>
+-        <span>Know what is working</span>
++        <span>Attract more direct guests</span>
++        <span>Reduce OTA dependency</span>
++        <span>Organize guest communication</span>
++        <span>Track booking enquiries</span>
+       </section>
+ 
+       <section className="section hotel-specialization" id="hotel-growth">
+         <div>
+-          <p className="kicker">Specialist hospitality practice</p>
++          <p className="kicker">Practical hospitality systems</p>
+           <h2>
+-            Specialized support for hotels, hostels, guesthouses and independent
+-            properties.
++            Fewer missed messages. Less OTA dependency. More direct booking opportunities.
+           </h2>
+         </div>
+         <div>
+           <p>
+-            Your guests do not all search in the same place. I help independent
+-            hotels expand and improve their presence across relevant booking
+-            channels, strengthen direct bookings, and automate the repetitive
+-            work behind the guest journey.
++            Guest enquiries arrive through Booking.com, Airbnb, WhatsApp and other
++            channels, while OTA commissions reduce what you keep from each stay.
++            I help independent hotels, guesthouses, hostels and tourism properties
++            in Nepal organize replies and follow-up, improve visibility and build
++            clear paths to book directly.
+           </p>
+           <div className="hotel-specialization-actions">
+             <a className="button button-primary" href={hotelWhatsappUrl}>
+-              Check My Hotel - Free <Arrow />
++              Free visibility & communication check <Arrow />
+             </a>
+             <Link className="button button-secondary" href="/hotel-growth">
+               View dedicated hotel page
+             </Link>
+           </div>
+           <small>
+-            Send me your hotel name. I&apos;ll check where your property
+-            currently appears online and identify practical opportunities to
+-            improve its booking visibility.
++            Send your property name and a website or booking link. I&apos;ll check
++            your visibility, direct booking path and how guest enquiries are
++            handled, then identify practical improvements.
+           </small>
+         </div>
+       </section>
+@@ -472,8 +472,8 @@ export default function HomePage() {
+             <h2>Live businesses. Real digital systems.</h2>
+           </div>
+           <p>
+-            Different industries, one consistent job: make the business easier
+-            to find, understand, trust and choose.
++            Hotel and tourism experience, supported by work across other sectors.
++            Each project makes the business easier to find, trust and contact.
+           </p>
+         </div>
+         <div className="project-grid">
+@@ -527,12 +527,11 @@ export default function HomePage() {
+       <section className="section services-section" id="services">
+         <div className="services-intro">
+           <p className="kicker">How I help</p>
+-          <h2>Not isolated digital tasks. One connected path to growth.</h2>
++          <h2>Practical systems that help guests find you, reach you and book.</h2>
+           <p>
+-            A website cannot fix a weak offer. Advertising cannot rescue a
+-            confusing customer journey. I look at how the pieces work together,
+-            then focus effort where it can make the biggest commercial
+-            difference.
++            Your listings, website and guest replies need to work together.
++            I focus on the gaps that cost enquiries: unclear room information,
++            missed follow-ups and no simple way to book directly.
+           </p>
+         </div>
+         <div className="capability-list">
+@@ -550,11 +549,11 @@ export default function HomePage() {
+         <div className="section-heading light">
+           <div>
+             <p className="kicker">A practical engagement</p>
+-            <h2>Start with the business problem-not a list of deliverables.</h2>
++            <h2>Start with the gaps costing your property enquiries.</h2>
+           </div>
+           <p>
+-            Every engagement begins by understanding the customer, the offer and
+-            the current path to action.
++            Every engagement starts with how guests discover your property,
++            where messages arrive and what happens before they book.
+           </p>
+         </div>
+         <div className="process-grid">
+@@ -572,11 +571,13 @@ export default function HomePage() {
+         <div className="section-heading">
+           <div>
+             <p className="kicker">Engagement options</p>
+-            <h2>Clear starting points, then deeper growth support where needed.</h2>
++            <h2>Core hotel offers, from OTA foundations to direct booking growth.</h2>
+           </div>
+           <p>
+-            Choose a practical starting point. After a short review, you receive
+-            a fixed proposal before work begins.
++            Hotel OTA Foundation, Hotel Booking Launch System and Hotel Growth
++            Partnership are the core offers. Selected service businesses can
++            also use the review, launch page and website options. Every engagement
++            starts with a fixed proposal.
+           </p>
+         </div>
+         <div className="engagement-grid">
+@@ -588,7 +589,7 @@ export default function HomePage() {
+               <p>{pkg.eyebrow}</p>
+               <h3>{pkg.name}</h3>
+               <div className="package-price">
+-                <small>Starting at</small>
++                <small>Investment</small>
+                 <strong>{pkg.price}</strong>
+                 <span>{pkg.timeline}</span>
+               </div>
+@@ -629,20 +630,19 @@ export default function HomePage() {
+         <div className="about-copy">
+           <p className="kicker">Work directly with me</p>
+           <h2>
+-            A hands-on digital growth partner with a strong hospitality
+-            background.
++            A hands-on systems partner for independent hospitality owners.
+           </h2>
+           <p>
+             I&apos;m Alok Das. I have spent more than 15 years working around
+-            hospitality, technology, marketing and digital systems. I work
+-            across strategy and implementation, connecting websites,
+-            advertising, SEO, WhatsApp, automation and measurement into a
+-            clearer commercial system.
++            hospitality, technology, marketing and digital systems. I help
++            independent properties in Nepal build direct booking paths and
++            practical guest communication routines. I also take on selected
++            website and enquiry-system projects for other service businesses.
+           </p>
+           <div className="about-facts">
+             <span>Based in Nepal</span>
+             <span>Available for remote work</span>
+-            <span>Hospitality specialization available</span>
++            <span>Focused on independent hospitality</span>
+           </div>
+         </div>
+       </section>
+@@ -650,17 +650,18 @@ export default function HomePage() {
+       <section className="final-cta">
+         <div>
+           <p className="kicker">A low-risk first step</p>
+-          <h2>Let&apos;s find the clearest digital growth opportunity.</h2>
++          <h2>Find the gaps in your visibility and guest communication.</h2>
+           <p>
+-            Send your website, social page or business goal. I&apos;ll help
+-            identify the clearest opportunity and the right starting point.
++            Send your property name, website or booking link, and tell me where
++            guest messages arrive. The free check identifies practical ways to
++            improve replies, strengthen direct booking paths and reduce OTA dependency.
+           </p>
+         </div>
+         <div className="cta-actions">
+-          <a className="button button-light" href={businessWhatsappUrl}>
+-            Discuss Your Business <Arrow />
++          <a className="button button-light" href={hotelWhatsappUrl}>
++            Get your free hotel check <Arrow />
+           </a>
+-          <Link href="/hotel-growth">Hotel owner? Get a free visibility check</Link>
++          <Link href="/hotel-growth">See how hotel growth support works</Link>
+           <a href={`tel:${phone}`}>Call Alok: +977 9865711752</a>
+           <a href={`mailto:${email}`}>{email}</a>
+         </div>
+@@ -675,7 +676,7 @@ export default function HomePage() {
+           </span>
+         </a>
+         <p>
+-          Websites - SEO - Ads - WhatsApp - Automation - Hotel Growth
++          Hotel visibility - Direct booking paths - Guest communication
+           <br />
+           <a href="/privacy">Privacy & analytics</a>
+         </p>
+@@ -685,10 +686,10 @@ export default function HomePage() {
+       <a
+         className="floating-whatsapp"
+         href={hotelWhatsappUrl}
+-        aria-label="Discuss your business on WhatsApp"
++        aria-label="Get a free hotel check on WhatsApp"
+       >
+         <span>WA</span>
+-        <strong>Discuss your business</strong>
++        <strong>Free hotel check</strong>
+       </a>
+     </main>
+   );
