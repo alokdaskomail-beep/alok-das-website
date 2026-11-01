@@ -5,16 +5,16 @@ const siteUrl = "https://alokdas.com.np";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Alok Das | Hotel Booking & Guest Communication Systems in Nepal",
+  title: "Alok Das | Hotel OTA Setup, Websites & Guest Communication in Nepal",
   description:
-    "Practical systems for independent hotels, guesthouses and tourism properties in Nepal to get more direct guests, reduce OTA dependency and organize guest communication.",
+    "OTA setup and optimization, hotel websites, SEO, guest communication support and professional property photography for independent hospitality properties in Nepal.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "More direct guests for independent hotels in Nepal",
+    title: "Better OTA setup and guest communication for hotels in Nepal",
     description:
-      "Direct booking paths, clearer guest communication and less OTA dependency. Get a free visibility and communication check.",
+      "Improve your property’s booking platform setup, website and search visibility. Get a free property visibility check.",
     url: siteUrl,
     siteName: "Alok Das - Digital Growth Partner",
     images: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Alok Das - Digital Growth Partner",
-    description: "Direct booking paths and guest communication systems for independent hospitality properties in Nepal.",
+    description: "OTA setup, websites, SEO, guest communication and property photography for hospitality properties in Nepal.",
     images: ["/og.png"],
   },
   icons: {
