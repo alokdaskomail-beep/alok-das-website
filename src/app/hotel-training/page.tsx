@@ -113,30 +113,7 @@ export default function HotelTrainingPage() {
         })),
       }) }} />
 
-      <header className="site-header">
-        <Link className="brand" href="/" aria-label="Alok Das home">
-          <span className="brand-mark">AD</span>
-          <span><strong>Alok Das</strong><small>Independent Digital Growth Partner</small></span>
-        </Link>
-        <nav aria-label="Primary navigation">
-          <Link href="/">Home</Link>
-          <a href="#topics">Topics</a>
-          <a href="#formats">Formats</a>
-          <a href="#pricing">Pricing</a>
-        </nav>
-        <a className="header-cta" href={trainingWhatsappUrl}>Enquire about training <Arrow /></a>
-        <details className="mobile-menu">
-          <summary aria-label="Open navigation menu"><span /><span /><span /></summary>
-          <div className="mobile-menu-panel">
-            <Link href="/">Home</Link>
-            <a href="#topics">Topics</a>
-            <a href="#formats">Formats</a>
-            <a href="#pricing">Pricing</a>
-            <Link href="/hotel-growth">Hotel growth services</Link>
-            <a className="mobile-menu-cta" href={trainingWhatsappUrl}>Enquire about training <Arrow /></a>
-          </div>
-        </details>
-      </header>
+
 
       <section className="hotel-page-hero">
         <div>

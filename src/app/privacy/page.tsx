@@ -7,13 +7,7 @@ export const metadata = {
 export default function PrivacyPage() {
   return (
     <main className="privacy-page">
-      <a className="brand" href="/">
-        <span className="brand-mark">AD</span>
-        <span>
-          <strong>Alok Das</strong>
-          <small>Independent Digital Growth Partner</small>
-        </span>
-      </a>
+
       <section>
         <p className="kicker">Privacy & analytics</p>
         <h1>Simple, practical privacy information.</h1>

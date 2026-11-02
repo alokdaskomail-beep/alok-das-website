@@ -1,34 +1,72 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useRef } from "react";
+import { hotelWhatsappUrl } from "../../lib/hotel-services";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/testimonials", label: "Testimonials" },
-  { href: "/contact", label: "Contact" },
+  { href: "/#services", label: "Services" },
+  { href: "/hotel-growth", label: "Hotel Growth" },
+  { href: "/hotel-training", label: "Training" },
+  { href: "/#packages", label: "Pricing" },
+  { href: "/#work", label: "Work" },
+  { href: "/#about", label: "About" },
 ];
 
 export default function Header() {
+  const pathname = usePathname();
+  const mobileMenu = useRef<HTMLDetailsElement>(null);
+
+  function closeMenu() {
+    if (mobileMenu.current) mobileMenu.current.open = false;
+  }
+
+  const links = navLinks.map(({ href, label }) => (
+    <Link
+      key={href}
+      href={href}
+      aria-current={pathname === href ? "page" : undefined}
+      onClick={closeMenu}
+    >
+      {label}
+    </Link>
+  ));
+
   return (
-    <header className="bg-background/80 backdrop-blur-sm sticky top-0 z-50">
-      <div className="container mx-auto flex justify-between items-center p-4">
-        <Link href="/" className="font-serif text-2xl font-bold text-gray-800">
-          Alok Das
-        </Link>
-        <nav>
-          <ul className="flex items-center space-x-6">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link 
-                  href={link.href} 
-                  className="text-gray-700 hover:text-primary transition-colors"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+    <header className="site-header">
+      <Link className="brand" href="/" aria-label="Alok Das home" onClick={closeMenu}>
+        <span className="brand-mark">AD</span>
+        <span>
+          <strong>Alok Das</strong>
+          <small>Independent Digital Growth Partner</small>
+        </span>
+      </Link>
+      <nav aria-label="Primary navigation">{links}</nav>
+      <a className="header-cta" href={hotelWhatsappUrl}>
+        Free 5-minute call <span aria-hidden="true">↗</span>
+      </a>
+      <details
+        className="mobile-menu"
+        ref={mobileMenu}
+        onKeyDown={(event) => {
+          if (event.key === "Escape") {
+            closeMenu();
+            mobileMenu.current?.querySelector("summary")?.focus();
+          }
+        }}
+      >
+        <summary aria-label="Toggle navigation menu">
+          <span /><span /><span />
+        </summary>
+        <nav className="mobile-menu-panel" aria-label="Mobile navigation">
+          {links}
+          <a className="mobile-menu-cta" href={hotelWhatsappUrl} onClick={closeMenu}>
+            Free 5-minute call <span aria-hidden="true">↗</span>
+          </a>
         </nav>
-      </div>
+      </details>
     </header>
   );
 }
