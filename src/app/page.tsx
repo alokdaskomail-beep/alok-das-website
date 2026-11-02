@@ -1,16 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import HotelServicePackages from "../components/hotel-service-packages";
+import { hotelWhatsappUrl } from "../lib/hotel-services";
 
 const phone = "+9779865711752";
 const email = "alokdaskomail@gmail.com";
-const hotelWhatsappText =
-  "Hi Alok, I would like you to check my hotel's online booking presence.\n\nMy property name is:\nCurrent website or booking link:\nMain challenge:";
-const hotelWhatsappUrl = `https://wa.me/9779865711752?text=${encodeURIComponent(
-  hotelWhatsappText,
-)}`;
-const photographyWhatsappUrl = `https://wa.me/9779865711752?text=${encodeURIComponent(
-  "Hello Alok, I would like to discuss property photography at Rs. 3,000 per room.\n\nProperty name:\nLocation:\nNumber of rooms:\nPreferred shoot date:",
-)}`;
 const businessWhatsappText =
   "Hello Alok, I would like to discuss digital growth support for my business.\n\nBusiness name:\nWebsite or social page:\nMain goal:\nBiggest current challenge:";
 const businessWhatsappUrl = `https://wa.me/9779865711752?text=${encodeURIComponent(
@@ -128,8 +122,8 @@ const capabilities = [
     "Prepare consistent replies and message templates for common questions, pre-arrival information, check-in instructions and follow-up. Configure automation where your platforms and tools support it.",
   ],
   [
-    "Optional guest communication support",
-    "If you prefer, my team can help handle guest enquiries and follow-up across agreed channels, including Booking.com, Airbnb and WhatsApp. We agree on coverage hours, responsibilities and when your property team needs to step in before the service begins.",
+    "Ongoing support by agreement",
+    "Ongoing listing maintenance, promotions and review support can be quoted separately. Standard support is during agreed office hours. Live guest-message handling, reservation operations and out-of-hours coverage require a separate agreement.",
   ],
   [
     "Professional property photography",
@@ -142,121 +136,10 @@ const capabilities = [
 ];
 
 const process = [
-  ["Review", "Understand the offer, audience, current channels and path from discovery to action."],
-  [
-    "Prioritize",
-    "Identify the website, SEO, advertising, automation or tracking improvements most likely to matter.",
-  ],
-  [
-    "Build",
-    "Implement the agreed website, campaign, content, automation or operations workflow.",
-  ],
-  [
-    "Measure",
-    "Track meaningful actions, learn from the response and improve what is working.",
-  ],
-];
-
-const packages = [
-  {
-    eyebrow: "Core hotel offer - get found",
-    name: "Hotel OTA Foundation",
-    price: "From NPR 35,000",
-    timeline:
-      "Help more guests discover and confidently book your property through properly configured OTA listings. Suitable for properties starting online or correcting gaps in their existing setup.",
-    items: [
-      "Stronger presence on relevant booking channels",
-      "Clear room details that support guest decisions",
-      "Agreed scope based on platform requirements",
-    ],
-    href: hotelWhatsappUrl,
-  },
-  {
-    eyebrow: "Core hotel offer - connected booking setup",
-    name: "Hotel Booking Launch System",
-    price: "From NPR 75,000",
-    timeline:
-      "Bring your booking channels, online visibility and guest communication foundations together. Build a clearer journey from discovering your property to making a booking, with scope agreed around your current setup.",
-    featured: true,
-    items: [
-      "Clearer OTA and Airbnb listings",
-      "Google visibility and clear booking paths",
-      "Guest reply templates and room/rate clarity",
-    ],
-    href: hotelWhatsappUrl,
-  },
-  {
-    eyebrow: "Core hotel offer - ongoing growth",
-    name: "Hotel Growth Partnership",
-    price: "From NPR 35,000/month",
-    timeline:
-      "Keep your online presence and booking channels working as your property grows. Ongoing support can include listing improvements, website and SEO updates, guest message workflows and performance reviews.",
-    items: [
-      "Consistent visibility and OTA information",
-      "Pricing, reviews and enquiry reporting",
-      "Website and guest message improvements",
-    ],
-    href: hotelWhatsappUrl,
-  },
-  {
-    eyebrow: "Additional option - focused review",
-    name: "Digital Growth Review",
-    price: "From NPR 15,000",
-    timeline:
-      "Find the gaps between being discovered and receiving an enquiry. A focused paid review for properties or selected service businesses that need a deeper plan after the free check.",
-    items: [],
-    href: businessWhatsappUrl,
-  },
-  {
-    eyebrow: "Additional option - one offer",
-    name: "Launch Page",
-    price: "From NPR 45,000",
-    timeline:
-      "Give one stay offer, campaign or service a clear path to enquiry. A focused page helps visitors understand the offer and contact you through WhatsApp or an enquiry form.",
-    items: [
-      "One conversion-focused page",
-      "Mobile-first design and CTA path",
-      "Analytics and basic SEO foundation",
-    ],
-    href: businessWhatsappUrl,
-  },
-  {
-    eyebrow: "Additional option - service businesses",
-    name: "Business Website",
-    price: "From NPR 95,000",
-    timeline:
-      "Help prospective customers understand your services, trust your business and enquire. A website option for selected service businesses, with search foundations and launch support.",
-    items: [
-      "Core business pages",
-      "Clear enquiry journey",
-      "SEO, analytics and launch support",
-    ],
-    href: businessWhatsappUrl,
-  },
-  {
-    eyebrow: "Additional service - photography",
-    name: "Professional property photography",
-    price: "Rs. 3,000 per room",
-    timeline:
-      "Show guests a clear, inviting view of your rooms with photography shot by an industry professional. We plan the required angles and number of photographs per room around the room type and relevant OTA requirements. Images are professionally edited and prepared for your booking listings and property website.",
-    items: [
-      "Room photography by an industry professional",
-      "Planned angles covering the room and its key features",
-      "Photo count agreed per room before the shoot",
-      "Professional editing for clear, natural presentation",
-      "Images prepared to suit relevant OTA requirements",
-    ],
-    href: photographyWhatsappUrl,
-    cta: "Discuss property photography",
-  },
-];
-
-const pricingClarifications = [
-  "Pricing reflects strategic review, setup quality, and hands-on implementation. Platform fees, paid ads, photography, subscriptions, channel manager costs, and third-party charges are not included unless clearly stated in the proposal.",
-  "For small fixes, single-platform support, or advisory-only needs, lighter support may be available after review.",
-  "Optional managed communication: Ask about adding guest enquiry handling by my team. Channels, coverage and pricing are agreed separately.",
-  "Photography is separately priced at Rs. 3,000 per room; the required angles and photo count per room are agreed before the shoot.",
-  "Staff training is available for OTA upkeep, website content and SEO basics, guest messages, automation and enquiry handling. Topics, participants and scope are agreed around your property’s needs.",
+  ["Discovery call", "A free five-minute conversation to understand your property, existing setup and priorities."],
+  ["Agree the scope", "Receive a written scope, fee, required-information checklist and timeline. Pay 50% to confirm."],
+  ["Review or implement", "I carry out the agreed review, corrections, setup or training once the required access and information are ready."],
+  ["Handover", "Review the completed work together, receive your handover and settle the balance. Follow-up is limited to the agreed package."],
 ];
 
 function Arrow() {
@@ -308,7 +191,7 @@ export default function HomePage() {
                 "@type": "Person",
                 "@id": "https://alokdas.com.np/#alok-das",
                 name: "Alok Das",
-                jobTitle: "Independent Digital Growth Partner",
+                jobTitle: "Hotel OTA and Digital Growth Consultant",
                 url: "https://alokdas.com.np/",
                 image: "https://alokdas.com.np/images/alok-das.jpg",
                 telephone: phone,
@@ -329,7 +212,7 @@ export default function HomePage() {
               {
                 "@type": "ProfessionalService",
                 "@id": "https://alokdas.com.np/#digital-growth",
-                name: "Alok Das - Digital Growth Partner",
+                name: "Alok Das - Hotel OTA and Digital Growth Services",
                 url: "https://alokdas.com.np/",
                 description:
                   "OTA setup and optimization, hotel websites, SEO, guest communication and professional property photography for independent hotels, guesthouses, hostels and tourism properties in Nepal. Selected service business projects also available.",
@@ -363,11 +246,12 @@ export default function HomePage() {
           <a href="#services">Services</a>
           <Link href="/hotel-growth">Hotel Growth</Link>
           <Link href="/hotel-training">Training</Link>
+          <a href="#packages">Pricing</a>
           <a href="#work">Work</a>
           <a href="#about">About</a>
         </nav>
         <a className="header-cta" href={hotelWhatsappUrl}>
-          Free hotel check <Arrow />
+          Free 5-minute call <Arrow />
         </a>
         <details className="mobile-menu">
           <summary aria-label="Open navigation menu">
@@ -379,10 +263,11 @@ export default function HomePage() {
             <a href="#services">Services</a>
             <Link href="/hotel-growth">Hotel Growth</Link>
             <Link href="/hotel-training">Training</Link>
+          <a href="#packages">Pricing</a>
             <a href="#work">Work</a>
             <a href="#about">About</a>
             <a className="mobile-menu-cta" href={hotelWhatsappUrl}>
-              Free hotel check <Arrow />
+              Free 5-minute call <Arrow />
             </a>
           </div>
         </details>
@@ -391,19 +276,19 @@ export default function HomePage() {
       <section className="hero" id="top">
         <div className="hero-copy">
           <p className="eyebrow">
-            <span aria-hidden="true" /> For independent hotels, guesthouses, hostels and tourism properties in Nepal
+            <span aria-hidden="true" /> For small hotels, resorts, homestays and properties opening soon in Nepal
           </p>
           <h1>
-            Get more bookings with better <em>OTA setup</em> and guest communication.
+            Get your property ready to be <em>found—and booked.</em>
           </h1>
           <p className="hero-intro">
-            I help your property get properly set up on booking platforms, improve
-            its website and search visibility, and organize guest messages—from
-            the first enquiry to arrival.
+            I help you set up or improve your booking-platform listings, organise
+            rates and guest messages, and train your team to manage the
+            day-to-day work confidently.
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href={hotelWhatsappUrl}>
-              Get a free property visibility check <Arrow />
+              Book a free 5-minute discovery call <Arrow />
             </a>
             <Link className="button button-secondary" href="/hotel-growth">
               Explore hotel services
@@ -412,13 +297,12 @@ export default function HomePage() {
           <div className="hero-terms" aria-label="Service highlights">
             <span>OTA setup & optimization</span>
             <span>Hotel websites & SEO</span>
-            <span>Guest communication support</span>
+            <span>Practical team training</span>
           </div>
           <div className="hero-proof">
-            <strong>15+</strong>
+            <strong>10+</strong>
             <span>
-              years around hospitality, technology, marketing and practical
-              digital systems.
+              years of hotel online marketing experience. Work directly with me in Nepali or English.
             </span>
           </div>
         </div>
@@ -496,7 +380,7 @@ export default function HomePage() {
           </p>
           <div className="hotel-specialization-actions">
             <a className="button button-primary" href={hotelWhatsappUrl}>
-              Check my property’s online presence <Arrow />
+              Discuss my property <Arrow />
             </a>
             <Link className="button button-secondary" href="/hotel-growth">
               View dedicated hotel page
@@ -504,7 +388,7 @@ export default function HomePage() {
           </div>
           <small>
             Send your property name and any existing website or booking links.
-            I&apos;ll review its online presence and highlight practical improvements.
+            We&apos;ll discuss your needs on a free five-minute call. Detailed account reviews and action plans are paid services.
           </small>
         </div>
       </section>
@@ -517,7 +401,7 @@ export default function HomePage() {
           </div>
           <p>
             Hotel and tourism experience, supported by work across other sectors.
-            Each project makes the business easier to find, trust and contact.
+            These examples show website and enquiry journeys across different sectors.
           </p>
         </div>
         <div className="project-grid">
@@ -596,12 +480,12 @@ export default function HomePage() {
         </div>
         <div>
           <p>Training for owners, managers, front-desk and reservation staff, and individual learners. Learn OTA upkeep, rates and availability, website updates, SEO basics, guest communication, message automation and preparing rooms for photography.</p>
-          <p>Taught personally by Alok Das in Nepali and/or English. Choose a focused workshop or several practical sessions, on-site, live online or in a group, with practice on your property’s accounts where access is available and agreed follow-up support.</p>
+          <p>For existing users: one 2–3-hour workshop at NPR 8,000 per property, plus two scheduled 20-minute follow-up calls within 14 days. Taught personally by Alok Das in Nepali or English, with practice on your property accounts. Beginners receive a quotation for several sessions.</p>
           <div className="hotel-specialization-actions">
             <Link className="button button-primary" href="/hotel-training">Explore the training program <Arrow /></Link>
             <a className="button button-secondary" href={`https://wa.me/9779865711752?text=${encodeURIComponent("Hello Alok, I would like to enquire about hotel training.\n\nName / property:\nNumber of participants:\nTopics of interest:\nPreferred format:")}`}>Enquire about training <Arrow /></a>
           </div>
-          <small>Per-person, per-property/team and custom quotations available. Topics, duration and fees are agreed before booking.</small>
+          <small>Remote across Nepal; on-site by arrangement. Open workshops: NPR 2,500 per person, up to 10 participants, subject to announced dates and minimum enrolment. No fixed on-site team-size cap; format agreed beforehand.</small>
         </div>
       </section>
 
@@ -634,43 +518,18 @@ export default function HomePage() {
             <h2>Ways to work together</h2>
           </div>
           <p>
-            Hotel OTA Foundation, Hotel Booking Launch System and Hotel Growth
-            Partnership are the core offers. Selected service businesses can
-            also use the review, launch page and website options. Every engagement
-            starts with a fixed proposal.
+            Choose a paid review, agreed corrections, new OTA setup or a combined
+            OTA-and-website launch. Training and photography are also available.
+            Larger or more complex properties receive a custom quotation.
           </p>
         </div>
-        <div className="engagement-grid">
-          {packages.map((pkg) => (
-            <article
-              className={pkg.featured ? "engagement-featured" : ""}
-              key={pkg.name}
-            >
-              <p>{pkg.eyebrow}</p>
-              <h3>{pkg.name}</h3>
-              <div className="package-price">
-                <small>Investment</small>
-                <strong>{pkg.price}</strong>
-                <span>{pkg.timeline}</span>
-              </div>
-              {pkg.items.length > 0 ? (
-                <ul>
-                  {pkg.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              ) : null}
-              <a className="package-link" href={pkg.href}>
-                {pkg.cta ?? "Ask about this"} <Arrow />
-              </a>
-            </article>
-          ))}
-        </div>
-        {pricingClarifications.map((note) => (
-          <p className="package-note" key={note}>
-            {note}
-          </p>
-        ))}
+        <HotelServicePackages />
+      </section>
+
+
+      <section className="section hotel-specialization" id="other-services">
+        <div><p className="kicker">Additional digital services</p><h2>Websites, SEO and advertising support.</h2></div>
+        <div><p>Hotel website improvements, search visibility, Meta and Google campaigns, and guest communication workflows can be quoted separately. I also take on selected website and enquiry-system projects for other service businesses.</p><a className="button button-secondary" href={businessWhatsappUrl}>Discuss a custom project <Arrow /></a></div>
       </section>
 
       <section className="section about-section" id="about">
@@ -693,8 +552,8 @@ export default function HomePage() {
             A hands-on systems partner for independent hospitality owners.
           </h2>
           <p>
-            I&apos;m Alok Das. I have spent more than 15 years working around
-            hospitality, technology, marketing and digital systems. I help
+            I&apos;m Alok Das, with more than 10 years of hotel online marketing
+            experience. I work personally with each property. I help
             independent properties in Nepal improve OTA setup, websites, search
             visibility and practical guest communication routines. I also take on selected
             website and enquiry-system projects for other service businesses.
@@ -713,14 +572,14 @@ export default function HomePage() {
           <h2>Find out where your property could be missing booking opportunities.</h2>
           <p>
             Send your property name and any existing website or booking links.
-            I&apos;ll review its online presence and highlight practical improvements
-            to listings, visibility and the guest enquiry journey.
+            We&apos;ll use a free five-minute discovery call to identify the right service.
+            Detailed account reviews, correction plans and training are paid services.
           </p>
           <p><em>I also work with selected service businesses on websites, search visibility and customer communication.</em></p>
         </div>
         <div className="cta-actions">
           <a className="button button-light" href={hotelWhatsappUrl}>
-            Get my free property check <Arrow />
+            Book my free 5-minute call <Arrow />
           </a>
           <Link href="/hotel-growth">See how hotel growth support works</Link>
           <a href={`tel:${phone}`}>Call Alok: +977 9865711752</a>
@@ -747,11 +606,12 @@ export default function HomePage() {
       <a
         className="floating-whatsapp"
         href={hotelWhatsappUrl}
-        aria-label="Get a free hotel check on WhatsApp"
+        aria-label="Arrange a free 5-minute discovery call on WhatsApp"
       >
         <span>WA</span>
-        <strong>Free hotel check</strong>
+        <strong>Free 5-minute call</strong>
       </a>
     </main>
   );
 }
+

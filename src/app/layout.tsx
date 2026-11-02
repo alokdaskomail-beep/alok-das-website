@@ -5,16 +5,16 @@ const siteUrl = "https://alokdas.com.np";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Alok Das | Hotel OTA Setup, Websites & Guest Communication in Nepal",
+  title: "Alok Das | Hotel OTA Setup, Websites & Training in Nepal",
   description:
-    "OTA setup and optimization, hotel websites, SEO, guest communication support and professional property photography for independent hospitality properties in Nepal.",
+    "OTA setup and optimization, hotel websites, SEO, guest-message templates, practical team training and professional property photography for independent hospitality properties in Nepal.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Better OTA setup and guest communication for hotels in Nepal",
     description:
-      "Improve your property’s booking platform setup, website and search visibility. Get a free property visibility check.",
+      "Improve your property’s booking platform setup, website and search visibility. Book a free 5-minute discovery call.",
     url: siteUrl,
     siteName: "Alok Das - Digital Growth Partner",
     images: [
@@ -68,3 +68,4 @@ export default function RootLayout({
     </html>
   );
 }
+
