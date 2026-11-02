@@ -234,44 +234,7 @@ export default function HomePage() {
         }}
       />
 
-      <header className="site-header">
-        <a className="brand" href="#top" aria-label="Alok Das home">
-          <span className="brand-mark">AD</span>
-          <span>
-            <strong>Alok Das</strong>
-            <small>Independent Digital Growth Partner</small>
-          </span>
-        </a>
-        <nav aria-label="Primary navigation">
-          <a href="#services">Services</a>
-          <Link href="/hotel-growth">Hotel Growth</Link>
-          <Link href="/hotel-training">Training</Link>
-          <a href="#packages">Pricing</a>
-          <a href="#work">Work</a>
-          <a href="#about">About</a>
-        </nav>
-        <a className="header-cta" href={hotelWhatsappUrl}>
-          Free 5-minute call <Arrow />
-        </a>
-        <details className="mobile-menu">
-          <summary aria-label="Open navigation menu">
-            <span />
-            <span />
-            <span />
-          </summary>
-          <div className="mobile-menu-panel">
-            <a href="#services">Services</a>
-            <Link href="/hotel-growth">Hotel Growth</Link>
-            <Link href="/hotel-training">Training</Link>
-          <a href="#packages">Pricing</a>
-            <a href="#work">Work</a>
-            <a href="#about">About</a>
-            <a className="mobile-menu-cta" href={hotelWhatsappUrl}>
-              Free 5-minute call <Arrow />
-            </a>
-          </div>
-        </details>
-      </header>
+
 
       <section className="hero" id="top">
         <div className="hero-copy">
