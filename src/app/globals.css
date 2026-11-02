@@ -1368,3 +1368,21 @@ h1, h2, h3, p,
 .engagement-grid > article { min-width: 0; }
 .package-price strong { overflow-wrap: anywhere; font-size: clamp(1.65rem, 2.4vw, 2.5rem); }
 :focus-visible { outline: 3px solid var(--coral); outline-offset: 4px; }
+
+/* Shared navigation is rendered once by the root layout on every page. */
+.site-header nav a[aria-current="page"] {
+  color: var(--deep);
+  text-decoration: underline;
+  text-decoration-color: var(--coral);
+  text-underline-offset: 5px;
+}
+.site-header .mobile-menu-panel {
+  gap: 0;
+  font-size: 0.93rem;
+}
+html { scroll-padding-top: 112px; }
+@media (min-width: 1041px) and (max-width: 1280px) {
+  .site-header { grid-template-columns: minmax(0, 1fr) auto auto; }
+  .site-header > nav { display: none; }
+  .site-header .mobile-menu { display: block; }
+}
