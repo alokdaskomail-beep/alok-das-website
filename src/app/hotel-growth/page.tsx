@@ -44,12 +44,7 @@ export default function HotelGrowthPage() {
           "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer },
         })),
       }) }} />
-      <header className="site-header">
-        <Link className="brand" href="/" aria-label="Alok Das home"><span className="brand-mark">AD</span><span><strong>Alok Das</strong><small>Independent Digital Growth Partner</small></span></Link>
-        <nav aria-label="Primary navigation"><Link href="/">Home</Link><a href="#services">Services</a><a href="#pricing">Pricing</a><Link href="/hotel-training">Training</Link></nav>
-        <a className="header-cta" href={hotelWhatsappUrl}>Free 5-minute call ↗</a>
-        <details className="mobile-menu"><summary aria-label="Open navigation menu"><span /><span /><span /></summary><div className="mobile-menu-panel"><Link href="/">Home</Link><a href="#services">Services</a><a href="#pricing">Pricing</a><Link href="/hotel-training">Training</Link><a href={hotelWhatsappUrl}>Free 5-minute call ↗</a></div></details>
-      </header>
+
       <section className="hotel-page-hero">
         <div><p className="eyebrow">For small hotels, resorts, homestays and properties opening soon</p><h1>Get your booking platforms working together.</h1><p>Set up your property correctly, improve existing listings, organise rates and guest messages, and give your team a practical handover.</p><div className="hero-actions"><a className="button button-primary" href={hotelWhatsappUrl}>Book a free 5-minute discovery call ↗</a><a className="button button-secondary" href="#pricing">View packages and prices</a></div><div className="hero-terms"><span>10+ years of hotel online marketing</span><span>Work directly with Alok</span><span>Nepali or English</span></div></div>
         <aside className="hotel-audit-card"><span>Already listed online?</span><h2>Check the setup before adding more complexity.</h2><p>Start with a paid review of up to three OTA accounts and your Google Business Profile. Receive written priorities and a 30-minute explanation.</p><a className="button button-light" href={hotelPackages[0].href}>Account review · NPR 5,000 ↗</a></aside>
