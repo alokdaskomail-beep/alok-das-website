@@ -1,234 +1,74 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-
-const phone = "+9779865711752";
-const email = "alokdaskomail@gmail.com";
-const trainingWhatsappUrl = `https://wa.me/9779865711752?text=${encodeURIComponent(
-  "Hello Alok, I would like to enquire about hotel training.\n\nName / property:\nLocation:\nRole: Owner / Manager / Staff / Individual learner\nNumber of participants:\nTopics of interest:\nPreferred format: On-site / Online / Group workshop\nPreferred dates:",
-)}`;
+import HotelServicePackages from "../../components/hotel-service-packages";
+import { email, phone, hotelWhatsappUrl, hotelPackages } from "../../lib/hotel-services";
 
 export const metadata: Metadata = {
-  title: "Practical Hotel & OTA Training in Nepal | Alok Das",
-  description:
-    "Practical training for hotel owners, managers, front-desk and reservation staff, and individual learners. OTA management, websites, SEO, guest communication and automation. Taught personally by Alok Das in Nepali or English.",
-  alternates: { canonical: "/hotel-training" },
+  title: "Hotel OTA Setup, Listing Review & Prices in Nepal | Alok Das",
+  description: "OTA account reviews from NPR 5,000, corrections from NPR 15,000 and new-property setup from NPR 25,000. Practical help for small hotels, resorts and homestays in Nepal.",
+  alternates: { canonical: "/hotel-growth" },
   openGraph: {
-    title: "Practical Hotel & OTA Training in Nepal",
-    description:
-      "Focused workshops or practical sessions in OTA management, websites, SEO and guest communication. On-site, online or group formats, with follow-up support.",
-    url: "https://alokdas.com.np/hotel-training",
-    type: "website",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Practical hotel training with Alok Das" }],
+    title: "Hotel OTA Setup & Listing Improvement | Alok Das",
+    description: "Clear packages for OTA reviews, listing corrections, new-property setup, websites and practical training. Start with a free 5-minute discovery call.",
+    url: "https://alokdas.com.np/hotel-growth", type: "website",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Alok Das — hotel OTA and digital services" }],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Practical Hotel & OTA Training in Nepal",
-    description: "Learn to manage booking channels and guest communication. Taught by Alok Das in Nepali or English.",
-    images: ["/og.png"],
-  },
+  twitter: { card: "summary_large_image", title: "Hotel OTA Setup & Listing Improvement", description: "Review, correct or set up your property's booking channels with Alok Das.", images: ["/og.png"] },
 };
 
-const modules = [
-  {
-    title: "OTA setup and daily management",
-    text: "Understand property listings on Booking.com, Airbnb and other relevant OTAs. Practise updating room information, amenities, policies and listing content so guests get a clear picture of the stay.",
-  },
-  {
-    title: "Room rates and availability",
-    text: "Work through room types, rates, availability calendars and booking information. Build a practical routine for checking the details your property publishes across its channels.",
-  },
-  {
-    title: "Property website updates",
-    text: "Learn to keep room descriptions, photos, property information and enquiry details current on your existing website. Exercises are tailored to the website tools your property uses.",
-  },
-  {
-    title: "SEO and Google visibility basics",
-    text: "Understand clear page titles, useful room and location content, and consistent property information. Learn which routine updates your team can manage to support search visibility.",
-  },
-  {
-    title: "Guest communication and enquiry handling",
-    text: "Practise clear replies to enquiries, common questions and booking requests across Booking.com, Airbnb, WhatsApp and other channels. Agree when staff should follow up or refer a question to the property manager.",
-  },
-  {
-    title: "Message templates and practical automation",
-    text: "Prepare reusable replies, pre-arrival details, check-in instructions and follow-up messages. Learn how to configure and review automated messages where your platforms and tools support them.",
-  },
-  {
-    title: "Preparing rooms and managing listing photos",
-    text: "Learn how to prepare rooms before a property shoot, identify useful room views and keep listing photos current. Professional photography is also available as a separate service.",
-  },
-];
-
-const formats = [
-  {
-    title: "Focused workshop",
-    text: "Concentrate on a specific need, such as OTA upkeep, guest replies or message templates. The topics and length are agreed around the participants’ starting point.",
-  },
-  {
-    title: "Several practical sessions",
-    text: "Work through a wider set of topics over several sessions, with time to practise and review what participants have applied to their property’s setup.",
-  },
-  {
-    title: "On-site, online or group learning",
-    text: "Arrange training at your property, through live online sessions or in a group setting. Location, dates and delivery format are confirmed when planning the program.",
-  },
-];
-
 const faqs = [
-  ["Who can join?", "Property owners, managers, front-desk and reservation staff can join. Individuals who are not currently employed by a property are welcome to enquire too. The topics and practical work are agreed around participants’ experience and available account access."],
-  ["Who teaches the training?", "Alok Das teaches personally. Training can be delivered in Nepali, English or a combination of both, depending on the participants."],
-  ["Will we practise on our own property accounts?", "Yes. Practical learning is built around your property’s accounts and existing tools where access is available. For individual learners, suitable practical work is discussed before confirming the program."],
-  ["How long is the program?", "You can choose a focused workshop or several practical sessions. Duration, topics and dates are agreed after discussing your goals, current skills and preferred format."],
-  ["How much does training cost?", "Pricing can be per person, per property or team, or through a custom quotation. Request a quote with your participant count, topics, location and preferred format; the scope and fee are agreed before booking."],
-  ["Is follow-up support available?", "Yes. Follow-up support helps participants apply what they have learned. The support scope and period are agreed as part of the training arrangement."],
+  ["Which platforms can you help with?", "Booking.com, Airbnb, Expedia, Agoda, Hostelworld and MakeMyTrip, where suitable and available for your property. The setup package includes up to three agreed platforms; extra platforms are quoted separately. Platform eligibility and verification must be checked."],
+  ["What do you check in an existing account?", "Property and room details, photographs, rates, availability, policies, promotions and guest-message templates. Rate checks compare equivalent rooms, inclusions, cancellation terms, taxes and promotions; unlike offers do not need identical prices."],
+  ["Does the free call include an account audit?", "The free five-minute discovery call identifies your needs and the appropriate service. A detailed account review, written findings and recommendations are included in the paid review package."],
+  ["How long does setup take?", "Fresh OTA setup typically takes about one week once the required documents, information, photographs and account access are ready. Platform verification can take longer. An initial existing-listing review usually takes 2–3 working days. Correction and website timelines are agreed separately."],
+  ["Do you guarantee more bookings or better rankings?", "No. I commit to the agreed setup, review, corrections and training. Bookings and visibility also depend on demand, location, rates, competition, reviews and platform decisions."],
+  ["Can you automate all our guest messages?", "I prepare templates and configure available triggers where the selected platforms and tools support them. A unified inbox, paid messaging tools or a channel manager are separate decisions and costs."],
+  ["Can you manage the accounts after setup?", "Ongoing maintenance, promotion handling and review support can be scoped through a custom quotation. Standard support is during agreed office hours. Live guest-message handling, reservation work and out-of-hours coverage require a separate agreement."],
+  ["Can you visit properties outside Kathmandu Valley?", "Yes, by arrangement. Clients arrange or reimburse transport and accommodation, with any travel-time fee agreed beforehand. A group can share those expenses. Remote delivery is available across Nepal."],
 ];
 
-function Arrow() {
-  return <span aria-hidden="true">↗</span>;
-}
-
-export default function HotelTrainingPage() {
+export default function HotelGrowthPage() {
   return (
     <main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Service",
-        name: "Practical Hotel and OTA Training",
-        description: "Personally taught workshops and practical sessions for property owners, managers, staff and individual learners, covering OTAs, websites, SEO, guest communication and automation.",
-        url: "https://alokdas.com.np/hotel-training",
+        "@context": "https://schema.org", "@type": "Service", name: "Hotel OTA Setup and Listing Improvement",
+        url: "https://alokdas.com.np/hotel-growth", areaServed: "Nepal",
         provider: { "@type": "Person", name: "Alok Das", url: "https://alokdas.com.np/" },
-        areaServed: "Nepal",
-        availableLanguage: ["Nepali", "English"],
-        serviceType: "Hospitality staff and property owner training",
+        hasOfferCatalog: { "@type": "OfferCatalog", name: "Hotel service packages", itemListElement: hotelPackages.slice(0, 5).map((pkg) => ({
+          "@type": "Offer", priceCurrency: "NPR", price: pkg.price.replace(/[^0-9]/g, ""), url: "https://alokdas.com.np/hotel-growth#pricing",
+          itemOffered: { "@type": "Service", name: pkg.name, description: [pkg.timeline, ...pkg.items].join(" ") },
+        })) },
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: faqs.map(([question, answer]) => ({
-          "@type": "Question", name: question,
-          acceptedAnswer: { "@type": "Answer", text: answer },
+        "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(([question, answer]) => ({
+          "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer },
         })),
       }) }} />
-
       <header className="site-header">
-        <Link className="brand" href="/" aria-label="Alok Das home">
-          <span className="brand-mark">AD</span>
-          <span><strong>Alok Das</strong><small>Independent Digital Growth Partner</small></span>
-        </Link>
-        <nav aria-label="Primary navigation">
-          <Link href="/">Home</Link>
-          <a href="#topics">Topics</a>
-          <a href="#formats">Formats</a>
-          <a href="#pricing">Pricing</a>
-        </nav>
-        <a className="header-cta" href={trainingWhatsappUrl}>Enquire about training <Arrow /></a>
-        <details className="mobile-menu">
-          <summary aria-label="Open navigation menu"><span /><span /><span /></summary>
-          <div className="mobile-menu-panel">
-            <Link href="/">Home</Link>
-            <a href="#topics">Topics</a>
-            <a href="#formats">Formats</a>
-            <a href="#pricing">Pricing</a>
-            <Link href="/hotel-growth">Hotel growth services</Link>
-            <a className="mobile-menu-cta" href={trainingWhatsappUrl}>Enquire about training <Arrow /></a>
-          </div>
-        </details>
+        <Link className="brand" href="/" aria-label="Alok Das home"><span className="brand-mark">AD</span><span><strong>Alok Das</strong><small>Independent Digital Growth Partner</small></span></Link>
+        <nav aria-label="Primary navigation"><Link href="/">Home</Link><a href="#services">Services</a><a href="#pricing">Pricing</a><Link href="/hotel-training">Training</Link></nav>
+        <a className="header-cta" href={hotelWhatsappUrl}>Free 5-minute call ↗</a>
+        <details className="mobile-menu"><summary aria-label="Open navigation menu"><span /><span /><span /></summary><div className="mobile-menu-panel"><Link href="/">Home</Link><a href="#services">Services</a><a href="#pricing">Pricing</a><Link href="/hotel-training">Training</Link><a href={hotelWhatsappUrl}>Free 5-minute call ↗</a></div></details>
       </header>
-
       <section className="hotel-page-hero">
-        <div>
-          <p className="eyebrow"><span aria-hidden="true" /> Practical hotel & OTA training in Nepal</p>
-          <h1>Run your property’s booking channels with confidence.</h1>
-          <p>Learn the practical work behind OTA listings, website updates, search visibility and guest communication. For property owners, managers, front-desk and reservation staff, and individual learners.</p>
-          <div className="hero-actions">
-            <a className="button button-primary" href={trainingWhatsappUrl}>Enquire about training <Arrow /></a>
-            <a className="button button-secondary" href="#topics">Explore training topics</a>
-          </div>
-          <div className="hero-terms" aria-label="Training highlights">
-            <span>Taught personally by Alok Das</span><span>Nepali and/or English</span><span>Practical learning & follow-up support</span>
-          </div>
-        </div>
-        <aside className="hotel-audit-card">
-          <span>Built around your learning needs</span>
-          <h2>Learn it. Practise it. Use it at your property.</h2>
-          <p>Choose a focused workshop or several practical sessions. Work with your own property accounts and existing tools where access is available, with follow-up support to help you apply the learning.</p>
-        </aside>
+        <div><p className="eyebrow">For small hotels, resorts, homestays and properties opening soon</p><h1>Get your booking platforms working together.</h1><p>Set up your property correctly, improve existing listings, organise rates and guest messages, and give your team a practical handover.</p><div className="hero-actions"><a className="button button-primary" href={hotelWhatsappUrl}>Book a free 5-minute discovery call ↗</a><a className="button button-secondary" href="#pricing">View packages and prices</a></div><div className="hero-terms"><span>10+ years of hotel online marketing</span><span>Work directly with Alok</span><span>Nepali or English</span></div></div>
+        <aside className="hotel-audit-card"><span>Already listed online?</span><h2>Check the setup before adding more complexity.</h2><p>Start with a paid review of up to three OTA accounts and your Google Business Profile. Receive written priorities and a 30-minute explanation.</p><a className="button button-light" href={hotelPackages[0].href}>Account review · NPR 5,000 ↗</a></aside>
       </section>
-
-      <section className="section hotel-specialization">
-        <div><p className="kicker">Who it is for</p><h2>Practical skills for the people running your property.</h2></div>
-        <div>
-          <p>Owners and managers can build a clearer understanding of their online setup. Front-desk and reservation teams can practise the daily tasks behind listings, enquiries and guest messages.</p>
-          <p>Individual learners are also welcome. Before confirming training, we discuss your starting point, goals and the accounts or tools available for practical exercises.</p>
-        </div>
-      </section>
-
-      <section className="section services-section hotel-services" id="topics">
-        <div className="services-intro">
-          <p className="kicker">What you can learn</p><h2>Work on the tasks your property needs every day.</h2>
-          <p>All of these subjects are available. Choose a focused set of topics or plan several sessions around the wider booking journey.</p>
-        </div>
+      <section className="section services-section hotel-services" id="services">
+        <div className="services-intro"><p className="kicker">Practical help for your property</p><h2>Start with the work you need now.</h2><p>One agreed scope, a clear price and direct communication with the person doing the work.</p></div>
         <div className="capability-list">
-          {modules.map((module, index) => <article key={module.title}>
-            <span>{String(index + 1).padStart(2, "0")}</span><h3>{module.title}</h3><p>{module.text}</p>
-          </article>)}
+          <article><span>01</span><h3>New property setup</h3><p>Prepare listings, descriptions, client-photo uploads, room types, rates, availability and policies on suitable platforms. Get guest-message templates, supported triggers and a handover.</p></article>
+          <article><span>02</span><h3>Existing account review and correction</h3><p>Identify incomplete information, confusing room options and unexplained rate differences. Review Google Business Profile and available message automation, then implement the agreed changes.</p></article>
+          <article><span>03</span><h3>Website and guest communication</h3><p>Give guests a clear place to understand the property and contact you. Prepare reusable enquiry replies, pre-arrival information and check-in instructions.</p></article>
+          <article><span>04</span><h3>Training and further support</h3><p>Teach your team on its own accounts. Photography, SEO, advertising and ongoing maintenance are available through a defined scope and quotation.</p></article>
         </div>
       </section>
-
-      <section className="section engagement-section" id="formats">
-        <div className="section-heading">
-          <div><p className="kicker">Flexible delivery</p><h2>A workshop or practical sessions, planned around you.</h2></div>
-          <p>On-site, live online and group formats are available. We agree on the location, schedule and participant needs before confirming the arrangement.</p>
-        </div>
-        <div className="engagement-grid">
-          {formats.map((format) => <article key={format.title}><p>Training format</p><h3>{format.title}</h3><p>{format.text}</p><a className="package-link" href={trainingWhatsappUrl}>Discuss this format <Arrow /></a></article>)}
-        </div>
-      </section>
-
-      <section className="section process-section">
-        <div className="section-heading light">
-          <div><p className="kicker">How training works</p><h2>From your current setup to confident daily practice.</h2></div>
-          <p>You learn directly with Alok Das, in Nepali, English or both, with practical exercises and follow-up support.</p>
-        </div>
-        <div className="process-grid">
-          <article><span>01</span><h3>Discuss your goals</h3><p>Share your role, property setup, current challenges and the skills you want to develop.</p></article>
-          <article><span>02</span><h3>Agree the program</h3><p>Confirm topics, delivery format, participants, duration, fees and follow-up support.</p></article>
-          <article><span>03</span><h3>Practise together</h3><p>Work through relevant tasks using the property accounts and tools available to you.</p></article>
-          <article><span>04</span><h3>Apply the learning</h3><p>Use the agreed follow-up support to discuss questions as you put the training into practice.</p></article>
-        </div>
-      </section>
-
-      <section className="section engagement-section" id="pricing">
-        <div className="section-heading">
-          <div><p className="kicker">Training arrangements</p><h2>Pricing that fits your participants and scope.</h2></div>
-          <p>Training is available per person, per property/team or by custom quotation. Share your needs for an agreed scope and fee before booking.</p>
-        </div>
-        <div className="engagement-grid">
-          <article><p>For individual learners</p><h3>Per person</h3><p>Discuss your experience, preferred subjects and suitable individual or group learning arrangements.</p><a className="package-link" href={trainingWhatsappUrl}>Ask for a quote <Arrow /></a></article>
-          <article className="engagement-featured"><p>For owners and property teams</p><h3>Per property / team</h3><p>Plan training around your own setup, staff responsibilities and daily booking and guest communication tasks.</p><a className="package-link" href={trainingWhatsappUrl}>Discuss team training <Arrow /></a></article>
-          <article><p>For a tailored program</p><h3>Custom quotation</h3><p>Combine topics and delivery formats into a focused workshop or several practical sessions.</p><a className="package-link" href={trainingWhatsappUrl}>Plan your program <Arrow /></a></article>
-        </div>
-        <p className="package-note">Topics, participants, location, session length and follow-up support are confirmed in the training proposal.</p>
-      </section>
-
-      <section className="section faq-section">
-        <div className="section-heading"><div><p className="kicker">Before you book</p><h2>Training questions, answered.</h2></div></div>
-        <div className="faq-list">{faqs.map(([question, answer]) => <article key={question}><h3>{question}</h3><p>{answer}</p></article>)}</div>
-      </section>
-
-      <section className="final-cta">
-        <div><p className="kicker">Plan your training</p><h2>What would you like your team to handle more confidently?</h2><p>Send your role or property name, participant count, topics of interest and preferred format. I’ll help shape a practical training arrangement.</p></div>
-        <div className="cta-actions">
-          <a className="button button-light" href={trainingWhatsappUrl}>Enquire about training <Arrow /></a>
-          <a href={`tel:${phone}`}>Call Alok: +977 9865711752</a>
-          <a href={`mailto:${email}`}>{email}</a>
-        </div>
-      </section>
-      <footer>
-        <Link className="brand" href="/"><span className="brand-mark">AD</span><span><strong>Alok Das</strong><small>Independent Digital Growth Partner</small></span></Link>
-        <p><Link href="/hotel-growth">Hotel growth services</Link><br /><Link href="/privacy">Privacy & analytics</Link></p><span>© 2026 Alok Das</span>
-      </footer>
-      <a className="floating-whatsapp" href={trainingWhatsappUrl} aria-label="Enquire about hotel training on WhatsApp"><span>WA</span><strong>Training enquiry</strong></a>
+      <section className="section engagement-section" id="pricing"><div className="section-heading"><div><p className="kicker">Services and prices</p><h2>Choose a clear starting point.</h2></div><p>These packages cover the base scope below. Additional platforms, larger properties and complex requirements receive a written quotation before work begins.</p></div><HotelServicePackages /></section>
+      <section className="section hotel-specialization"><div><p className="kicker">Keep the knowledge with your team</p><h2>Practical training using your own accounts.</h2></div><div><p>A focused 2–3-hour workshop for existing users, with two scheduled 20-minute follow-up calls within 14 days: NPR 8,000 per property. Beginners receive a plan for several sessions.</p><Link className="button button-primary" href="/hotel-training">See training options ↗</Link></div></section>
+      <section className="section faq-section"><div className="section-heading"><div><p className="kicker">Before we start</p><h2>Your questions, answered.</h2></div></div><div className="faq-list">{faqs.map(([q, a]) => <article key={q}><h3>{q}</h3><p>{a}</p></article>)}</div></section>
+      <section className="final-cta"><div><p className="kicker">A simple first step</p><h2>Tell me about your property.</h2><p>Send your property name, location and existing listing link, if any. A free five-minute call helps us choose the right service. Detailed reviews and recommendations are paid work.</p></div><div className="cta-actions"><a className="button button-light" href={hotelWhatsappUrl}>Arrange my free discovery call ↗</a><a href={`tel:${phone}`}>Call Alok: +977 9865711752</a><a href={`mailto:${email}`}>{email}</a></div></section>
+      <footer><Link className="brand" href="/"><span className="brand-mark">AD</span><span><strong>Alok Das</strong><small>Independent Digital Growth Partner</small></span></Link><p><Link href="/hotel-training">Practical hotel training</Link><br /><Link href="/privacy">Privacy & analytics</Link></p><span>© 2026 Alok Das</span></footer>
+      <a className="floating-whatsapp" href={hotelWhatsappUrl} aria-label="Arrange a free five-minute discovery call on WhatsApp"><span>WA</span><strong>Free 5-minute call</strong></a>
     </main>
   );
 }
