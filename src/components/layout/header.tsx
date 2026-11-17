@@ -8,6 +8,7 @@ import { hotelWhatsappUrl } from "../../lib/hotel-services";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/#services", label: "Services" },
+  { href: "/local-business-growth", label: "Local Business" },
   { href: "/hotel-growth", label: "Hotel Growth" },
   { href: "/hotel-training", label: "Training" },
   { href: "/#packages", label: "Pricing" },

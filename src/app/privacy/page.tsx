@@ -22,6 +22,12 @@ export default function PrivacyPage() {
           work you requested.
         </p>
         <p>
+          The Local Business Growth visibility-check form prepares a WhatsApp
+          message in your browser. This website does not retain those form
+          fields; information is shared only if you choose to send the message
+          through WhatsApp.
+        </p>
+        <p>
           This website links to external services such as WhatsApp, Google Tag
           Manager and live client websites. Those services may process data
           according to their own privacy policies.

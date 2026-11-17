@@ -356,6 +356,22 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="section local-business-intro">
+        <div>
+          <p className="kicker">Selected local business support</p>
+          <h2>Practical visibility and enquiry systems for local service businesses.</h2>
+        </div>
+        <div>
+          <p>
+            For selected businesses in Kathmandu Valley, I also improve Google
+            visibility, service-page clarity and WhatsApp enquiry journeys.
+          </p>
+          <Link className="button button-secondary" href="/local-business-growth">
+            Explore local business growth <Arrow />
+          </Link>
+        </div>
+      </section>
+
       <section className="section work-section" id="work">
         <div className="section-heading">
           <div>
@@ -559,7 +575,7 @@ export default function HomePage() {
           </span>
         </a>
         <p>
-          OTA setup - Hotel websites & SEO - Guest communication
+          Hotel OTA setup - Websites & SEO - Local business growth
           <br />
           <a href="/privacy">Privacy & analytics</a>
         </p>
